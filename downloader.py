@@ -2,10 +2,14 @@ import os
 import sys
 import time
 import glob
+import re
+import shutil
 import logging
 import subprocess
 from pathlib import Path
 from typing import Optional, Dict, Tuple
+from http.cookiejar import MozillaCookieJar
+import requests
 
 from config import (
     TEMP_DIR,
@@ -15,16 +19,18 @@ from config import (
     MIN_AUDIO_FILE_SIZE_BYTES,
 )
 
-
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+
 
 class Downloader:
     """
     Module 3: Downloader (Tải & Xử lý Audio)
-    Nhận URL audio stream, gọi yt-dlp và ffmpeg thông qua subprocess để tải
-    và ép kiểu âm thanh sang định dạng .m4a vào thư mục tạm (TEMP_DIR).
-    Hỗ trợ gửi Cookie tài khoản VIP nếu được cấu hình.
+    Tải audio stream đa phân đoạn (HTTP 206 Multi-Range Streaming) trực tiếp từ máy chủ,
+    vượt qua cơ chế giới hạn 8MB/request của Cloudflare R2 Edge, và ép kiểu sang định dạng .m4a
+    thông qua ffmpeg vào thư mục tạm (TEMP_DIR).
+    Hỗ trợ Cookie tài khoản VIP và các header ngữ cảnh trình duyệt (Sec-Fetch-*).
     """
+
     def __init__(self, temp_dir: str | Path = TEMP_DIR, session_cookie: str = SESSION_COOKIE):
         self.temp_dir = Path(temp_dir)
         self.session_cookie = session_cookie.strip()
@@ -32,7 +38,7 @@ class Downloader:
         self.cleanup_stale_temp_files()
 
     def cleanup_stale_temp_files(self) -> int:
-        """Dọn dẹp các file rác dở dang (*.tmp, *.part, *.ytdl) nếu phiên trước bị gián đoạn đột ngột."""
+        """Dọn dẹp các file rác dở dang (*.tmp, *.part, *.ytdl, raw_temp_*) nếu phiên trước bị gián đoạn đột ngột."""
         stale_patterns = ["*.tmp", "*.part", "*.ytdl", "raw_temp_*"]
         cleaned_count = 0
         for pattern in stale_patterns:
@@ -46,106 +52,236 @@ class Downloader:
                     logging.warning(f"[Downloader] Không thể xóa file tạm {file_path.name}: {e}")
         return cleaned_count
 
-    def validate_downloaded_audio(self, file_path: Path) -> Tuple[bool, str]:
+    def _init_session(self, referer_url: Optional[str] = None) -> requests.Session:
         """
-        Kiểm tra tính toàn vẹn và dung lượng tối thiểu của file audio vừa tải về.
-        Returns:
-            (is_valid, error_reason)
+        Khởi tạo requests.Session chuẩn với đầy đủ Header trình duyệt (Sec-Fetch)
+        và nạp Cookies từ cookies.txt hoặc chuỗi SESSION_COOKIE.
         """
-        if not file_path.exists():
-            return False, f"File không tồn tại: {file_path}"
+        session = requests.Session()
 
-        size = file_path.stat().st_size
-        size_mb = size / (1024 * 1024)
+        # 1. Nạp cookies từ cookies.txt nếu có
+        cookie_file = self.temp_dir.parent / "cookies.txt"
+        if cookie_file.exists() and cookie_file.stat().st_size > 0:
+            try:
+                cj = MozillaCookieJar(str(cookie_file))
+                cj.load(ignore_discard=True, ignore_expires=True)
+                session.cookies.update(cj)
+                logging.debug("[Downloader] Đã tải cookies từ cookies.txt")
+            except Exception as e:
+                logging.debug(f"[Downloader] Lỗi nạp cookies.txt qua MozillaCookieJar ({e}), phân tích dòng thủ công:")
+                try:
+                    with open(cookie_file, "r", encoding="utf-8", errors="ignore") as cf:
+                        for line in cf:
+                            parts = line.strip().split("\t")
+                            if len(parts) >= 7:
+                                session.cookies.set(parts[5], parts[6], domain=parts[0].lstrip("."))
+                except Exception:
+                    pass
 
-        if size == 0:
-            return False, "File rỗng (0 bytes)"
+        # 2. Nạp cookies từ cấu hình SESSION_COOKIE (.env)
+        if self.session_cookie:
+            for item in self.session_cookie.split(";"):
+                if "=" in item:
+                    k, v = item.strip().split("=", 1)
+                    session.cookies.set(k.strip(), v.strip(), domain="metruyenaudio.online")
 
-        if size < MIN_AUDIO_FILE_SIZE_BYTES:
-            return False, (
-                f"Dung lượng file quá nhỏ ({size_mb:.2f} MB), "
-                f"không đạt ngưỡng tối thiểu {MIN_AUDIO_FILE_SIZE_MB:.1f} MB (nghi ngờ đứt mạng hoặc tải dở)"
+        # 3. Chuẩn hóa headers giả lập trình duyệt Chrome
+        headers = {
+            "User-Agent": USER_AGENT,
+            "Accept": "*/*",
+            "Accept-Encoding": "identity;q=1, *;q=0",
+            "Sec-Fetch-Dest": "audio",
+            "Sec-Fetch-Mode": "no-cors",
+            "Sec-Fetch-Site": "same-origin",
+        }
+        if referer_url:
+            headers["Referer"] = referer_url
+
+        session.headers.update(headers)
+        return session
+
+    def _download_multirange_stream(
+        self, audio_url: str, episode_url: Optional[str], raw_file: Path
+    ) -> Tuple[Path, Optional[int]]:
+        """
+        Tải luồng audio đa phân đoạn (HTTP Range Loop).
+        Khắc phục triệt để lỗi máy chủ Cloudflare R2 chỉ trả về tối đa 8MB mỗi lượt tải.
+        Tự động nối tiếp các phân đoạn byte cho tới khi nhận đủ 100% dung lượng.
+        """
+        session = self._init_session(episode_url)
+
+        # Lượt gửi đầu tiên thăm dò kích thước tổng thể
+        init_headers = {"Range": "bytes=0-"}
+        resp = session.get(audio_url, headers=init_headers, stream=True, timeout=30)
+        resp.raise_for_status()
+
+        # URL máy chủ edge sau khi redirect
+        final_stream_url = resp.url
+
+        # Trích xuất tổng dung lượng file từ Content-Range (e.g. bytes 0-8388607/283954407)
+        total_size = None
+        content_range = resp.headers.get("Content-Range")
+        if content_range:
+            m = re.search(r"bytes\s+\d+-\d+/(\d+|\*)", content_range)
+            if m and m.group(1) != "*":
+                total_size = int(m.group(1))
+
+        if not total_size:
+            cl = resp.headers.get("Content-Length")
+            total_size = int(cl) if cl else None
+
+        if total_size:
+            logging.info(
+                f"[Downloader] Tổng dung lượng audio thực tế: {total_size / (1024*1024):.2f} MB"
             )
-
-        # Kiểm tra tính toàn vẹn container M4A qua ffprobe (nếu có sẵn ffprobe)
-        try:
-            probe_cmd = [
-                "ffprobe", "-v", "error",
-                "-show_entries", "format=duration",
-                "-of", "default=noprint_wrappers=1:nokey=1",
-                str(file_path)
-            ]
-            res = subprocess.run(
-                probe_cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                check=False
-            )
-            if res.returncode != 0:
-                err_text = res.stderr.strip() or "lỗi container audio / thiếu moov atom"
-                return False, f"ffprobe phát hiện file audio hỏng: {err_text}"
-
-            duration_str = res.stdout.strip()
-            if duration_str:
-                duration_sec = float(duration_str)
-                if duration_sec <= 0:
-                    return False, "Thời lượng audio không hợp lệ (<= 0 giây)"
-                logging.info(
-                    f"[Downloader] ffprobe kiểm tra OK: thời lượng {duration_sec/3600:.2f} giờ "
-                    f"({duration_sec/60:.1f} phút)"
-                )
-        except FileNotFoundError:
-            # ffprobe không cài hoặc không có trong PATH, bỏ qua kiểm tra sâu thời lượng
-            pass
-        except Exception as ex:
-            logging.warning(f"[Downloader] Không thể kiểm tra thời lượng qua ffprobe: {ex}")
-
-        return True, ""
-
-    def download_episode(self, episode_item: Dict[str, str], custom_filename: Optional[str] = None) -> Path:
-        """
-        Tải 1 tập truyện và chuyển đổi sang M4A.
-        Args:
-            episode_item: Dict chứa 'audio_url', 'story_title', 'episode_title', v.v.
-            custom_filename: Tên file tùy chỉnh (không cần đuôi .m4a)
-        Returns:
-            Path tới file .m4a vừa được tạo ra trong thư mục tạm.
-        Raises:
-            RuntimeError nếu quá trình tải thất bại hoặc không tìm thấy file xuất ra.
-        """
-        audio_url = episode_item.get("audio_url") or episode_item.get("episode_url")
-        story_title = episode_item.get("story_title", "UnknownStory")
-        episode_title = episode_item.get("episode_title", "UnknownEpisode")
-
-        if not audio_url:
-            raise ValueError("[Downloader] Không tìm thấy URL hợp lệ để tải.")
-
-        # Tạo tên file sạch nếu có custom_filename hoặc tự động tạo theo TênBộTruyện - TênTập
-        if not custom_filename:
-            safe_story = "".join(c for c in story_title if c.isalnum() or c in (" ", "-", "_")).strip()
-            safe_episode = "".join(c for c in episode_title if c.isalnum() or c in (" ", "-", "_")).strip()
-            out_filename_template = f"{safe_story} - {safe_episode}.%(ext)s"
         else:
-            safe_name = "".join(c for c in custom_filename if c.isalnum() or c in (" ", "-", "_")).strip()
-            out_filename_template = f"{safe_name}.%(ext)s"
+            logging.info("[Downloader] Không xác định được kích thước tổng, tải luồng liên tục...")
 
-        logging.info(f"[Downloader] Bắt đầu tải tập: '{story_title} - {episode_title}' từ URL: {audio_url}")
+        downloaded = 0
+        start_time = time.time()
+        chunk_buffer_size = 1048576  # 1 MB buffer
 
-        # Lệnh subprocess gọi yt-dlp chính xác theo yêu cầu dự án
-        # yt-dlp -x --audio-format m4a --paths [TEMP_DIR] -o "%(title)s.%(ext)s" [URL]
+        with open(raw_file, "wb") as f:
+            # Ghi phân đoạn đầu tiên từ phản hồi khởi tạo
+            for chunk in resp.iter_content(chunk_size=chunk_buffer_size):
+                if chunk:
+                    f.write(chunk)
+                    downloaded += len(chunk)
+
+            # Lặp tải các phân đoạn tiếp theo nếu chưa đủ total_size
+            chunk_idx = 1
+            max_retries = 5
+
+            while total_size and downloaded < total_size:
+                chunk_idx += 1
+                retry_count = 0
+                success_chunk = False
+
+                while retry_count < max_retries:
+                    try:
+                        chunk_headers = {"Range": f"bytes={downloaded}-"}
+                        c_resp = session.get(
+                            final_stream_url, headers=chunk_headers, stream=True, timeout=30
+                        )
+                        c_resp.raise_for_status()
+
+                        chunk_read = 0
+                        for chunk in c_resp.iter_content(chunk_size=chunk_buffer_size):
+                            if chunk:
+                                f.write(chunk)
+                                downloaded += len(chunk)
+                                chunk_read += len(chunk)
+
+                        if chunk_read == 0:
+                            # Không còn dữ liệu đọc thêm
+                            break
+
+                        elapsed = time.time() - start_time
+                        speed = (downloaded / (1024 * 1024)) / elapsed if elapsed > 0 else 0
+                        pct = (downloaded / total_size) * 100
+                        eta_sec = (
+                            int((total_size - downloaded) / (speed * 1024 * 1024))
+                            if speed > 0
+                            else 0
+                        )
+                        eta_str = f"{eta_sec // 60:02d}:{eta_sec % 60:02d}"
+
+                        sys.stdout.write(
+                            f"\r[Tải Audio] {downloaded / (1024*1024):.1f} / {total_size / (1024*1024):.1f} MB "
+                            f"({pct:.1f}%) | {speed:.2f} MB/s | ETA: {eta_str}"
+                        )
+                        sys.stdout.flush()
+                        success_chunk = True
+                        break
+
+                    except Exception as ex:
+                        retry_count += 1
+                        logging.warning(
+                            f"\n[Downloader] Lỗi kết nối tại offset {downloaded} "
+                            f"(Lần thử {retry_count}/{max_retries}): {ex}"
+                        )
+                        time.sleep(2 * retry_count)
+
+                if not success_chunk and retry_count >= max_retries:
+                    raise RuntimeError(
+                        f"Mất kết nối tải phân đoạn tại offset {downloaded} sau {max_retries} lần thử lại."
+                    )
+
+        total_time = time.time() - start_time
+        print()  # Xuống dòng sau tiến trình tải
+        avg_speed = (downloaded / (1024 * 1024)) / total_time if total_time > 0 else 0
+        logging.info(
+            f"[Downloader] Đã tải hoàn chỉnh file raw ({downloaded / (1024*1024):.2f} MB) "
+            f"trong {total_time:.1f}s (Tốc độ TB: {avg_speed:.2f} MB/s)."
+        )
+        return raw_file, total_size
+
+    def _convert_to_m4a(self, raw_audio_path: Path, target_m4a_path: Path) -> Path:
+        """
+        Chuyển đổi file audio raw sang định dạng chuẩn .m4a (AAC 128k) bằng ffmpeg.
+        Nếu hệ thống không có sẵn ffmpeg, giữ nguyên file audio gốc với phần mở rộng phù hợp.
+        """
+        ffmpeg_bin = shutil.which("ffmpeg")
+
+        if ffmpeg_bin:
+            logging.info(f"🔄 [CHUYỂN ĐỔI AUDIO] Đang gọi ffmpeg chuyển đổi sang .M4A...")
+            ffmpeg_cmd = [
+                ffmpeg_bin,
+                "-y",
+                "-i",
+                str(raw_audio_path),
+                "-c:a",
+                "aac",
+                "-b:a",
+                "128k",
+                str(target_m4a_path),
+            ]
+            try:
+                res = subprocess.run(ffmpeg_cmd, check=True, capture_output=True, text=True)
+                if raw_audio_path.exists():
+                    raw_audio_path.unlink()
+                logging.info(f"[Downloader] Chuyển đổi .M4A thành công: {target_m4a_path.name}")
+                return target_m4a_path
+            except subprocess.CalledProcessError as e:
+                err_text = e.stderr or e.stdout or str(e)
+                logging.warning(f"[Downloader] Lỗi khi ép kiểu M4A qua ffmpeg: {err_text}")
+                # Giữ lại raw file nếu ffmpeg lỗi
+                return raw_audio_path
+        else:
+            logging.warning(
+                "[Downloader] ffmpeg không có trong PATH. Bỏ qua bước ép kiểu AAC, giữ nguyên file audio tải về."
+            )
+            # Đổi tên file raw sang đuôi mp3 nếu chưa có
+            final_path = target_m4a_path.with_suffix(".mp3")
+            if raw_audio_path.exists():
+                if final_path.exists():
+                    final_path.unlink()
+                raw_audio_path.rename(final_path)
+            return final_path
+
+    def _download_ytdlp_fallback(
+        self, episode_item: Dict[str, str], out_filename_template: str
+    ) -> Optional[Path]:
+        """Phương án dự phòng thứ 2: Sử dụng yt-dlp đối với các nguồn âm thanh ngoài thông thường."""
+        audio_url = episode_item.get("audio_url") or episode_item.get("episode_url")
         cmd = [
             "yt-dlp",
             "-x",
-            "--audio-format", "m4a",
-            "--paths", str(self.temp_dir),
-            "-o", out_filename_template,
-            "--user-agent", USER_AGENT,
+            "--audio-format",
+            "m4a",
+            "--paths",
+            str(self.temp_dir),
+            "-o",
+            out_filename_template,
+            "--user-agent",
+            USER_AGENT,
             "--no-progress",
-            "--add-header", "Sec-Fetch-Dest:audio",
-            "--add-header", "Sec-Fetch-Mode:no-cors",
-            "--add-header", "Sec-Fetch-Site:same-origin",
-            "--add-header", "Range:bytes=0-"
+            "--add-header",
+            "Sec-Fetch-Dest:audio",
+            "--add-header",
+            "Sec-Fetch-Mode:no-cors",
+            "--add-header",
+            "Sec-Fetch-Site:same-origin",
         ]
 
         if episode_item.get("episode_url"):
@@ -159,132 +295,206 @@ class Downloader:
             cmd.extend(["--cookies", str(cookie_file)])
 
         cmd.append(audio_url)
+        logging.info(f"[Downloader] Thử yt-dlp fallback: {' '.join(cmd)}")
 
+        result = subprocess.run(cmd, check=True)
 
-        logging.info(f"[Downloader] Đang thực thi lệnh subprocess: {' '.join(cmd)}")
-        logging.info("🔄 [CHUYỂN ĐỔI AUDIO] yt-dlp đang tải & ép kiểu định dạng sang .M4A bằng ffmpeg...")
-
-        try:
-            # Chạy yt-dlp trực tiếp xuất log thời gian thực (phần trăm %, tốc độ, ETA) ra màn hình
-            result = subprocess.run(
-                cmd,
-                check=True
-            )
-            logging.info("[Downloader] yt-dlp và ffmpeg đã hoàn thành chuyển đổi M4A thành công.")
-        except subprocess.CalledProcessError as e:
-            err_msg = f"yt-dlp mã lỗi {e.returncode}"
-            logging.warning(f"[Downloader] yt-dlp gặp lỗi ({err_msg}). Thử tải và chuyển đổi M4A trực tiếp bằng HTTP Requests + ffmpeg fallback...")
-            
-            # Fallback: Tải trực tiếp bằng requests + chuyển đổi M4A bằng ffmpeg
-            try:
-                import requests
-                req_headers = {
-                    "User-Agent": USER_AGENT,
-                    "Accept": "*/*",
-                    "Accept-Encoding": "identity;q=1, *;q=0",
-                    "Range": "bytes=0-",
-                    "Sec-Fetch-Dest": "audio",
-                    "Sec-Fetch-Mode": "no-cors",
-                    "Sec-Fetch-Site": "same-origin"
-                }
-                if episode_item.get("episode_url"):
-                    req_headers["Referer"] = episode_item["episode_url"]
-                if self.session_cookie:
-                    req_headers["Cookie"] = self.session_cookie
-                
-                resp = requests.get(audio_url, headers=req_headers, stream=True, timeout=30)
-                resp.raise_for_status()
-                
-                total_size = int(resp.headers.get('content-length', 0))
-                downloaded_bytes = 0
-                last_logged_percent = -10
-                
-                raw_temp_file = self.temp_dir / f"raw_temp_{int(time.time())}.tmp"
-                target_m4a = self.temp_dir / out_filename_template.replace("%(ext)s", "m4a")
-                
-                with open(raw_temp_file, "wb") as f:
-                    for chunk in resp.iter_content(chunk_size=131072):
-                        if chunk:
-                            f.write(chunk)
-                            downloaded_bytes += len(chunk)
-                            if total_size > 0:
-                                percent = (downloaded_bytes / total_size) * 100
-                                sys.stdout.write(f"\r[Downloader Requests] Đã tải: {downloaded_bytes / (1024*1024):.2f} MB / {total_size / (1024*1024):.2f} MB ({percent:.1f}%)")
-                                sys.stdout.flush()
-                print() # Xuống dòng sau khi tải xong
-
-
-                # Gọi ffmpeg để ép kiểu sang M4A chuẩn
-                logging.info(f"🔄 [CHUYỂN ĐỔI AUDIO] Đang gọi ffmpeg chuyển đổi file sang định dạng .m4a...")
-                ffmpeg_cmd = [
-                    "ffmpeg", "-y",
-                    "-i", str(raw_temp_file),
-                    "-c:a", "aac",
-                    "-b:a", "128k",
-                    str(target_m4a)
-                ]
-                subprocess.run(ffmpeg_cmd, check=True, capture_output=True)
-                
-                if raw_temp_file.exists():
-                    os.remove(raw_temp_file)
-
-                logging.info(f"[Downloader] Tải & chuyển đổi M4A thành công: {target_m4a}")
-            except Exception as req_err:
-                if raw_temp_file and raw_temp_file.exists():
-                    os.remove(raw_temp_file)
-                logging.error(f"[Downloader] Lỗi subprocess yt-dlp: {err_msg}")
-                logging.error(f"[Downloader] Lỗi HTTP requests/ffmpeg fallback: {req_err}")
-                raise RuntimeError(f"Tải thất bại qua yt-dlp ({err_msg}) và Requests ({req_err})") from req_err
-
-
-
-
-
-        # Tìm file .m4a vừa được tạo trong TEMP_DIR
-        # Ưu tiên tìm file match với pattern tên file vừa tạo
         expected_stem = out_filename_template.rsplit(".", 1)[0]
         matching_files = list(self.temp_dir.glob(f"{expected_stem}*.m4a"))
-        
         if not matching_files:
-            # Fallback tìm file .m4a mới nhất được tạo trong temp_dir
-            all_m4a_files = sorted(self.temp_dir.glob("*.m4a"), key=lambda p: p.stat().st_mtime, reverse=True)
+            all_m4a_files = sorted(
+                self.temp_dir.glob("*.m4a"), key=lambda p: p.stat().st_mtime, reverse=True
+            )
             if all_m4a_files:
                 matching_files = [all_m4a_files[0]]
 
-        if not matching_files:
-            raise RuntimeError(f"[Downloader] Thao tác thành công nhưng không tìm thấy file .m4a trong {self.temp_dir}")
+        return matching_files[0] if matching_files else None
 
-        downloaded_file = matching_files[0]
+    def validate_downloaded_audio(
+        self, file_path: Path, expected_size: Optional[int] = None
+    ) -> Tuple[bool, str]:
+        """
+        Kiểm tra tính toàn vẹn và dung lượng tối thiểu của file audio vừa tải về.
+        Args:
+            file_path: Đường dẫn file audio.
+            expected_size: Dung lượng byte dự kiến từ máy chủ (nếu có).
+        Returns:
+            (is_valid, error_reason)
+        """
+        if not file_path.exists():
+            return False, f"File không tồn tại: {file_path}"
 
-        # Kiểm tra tính toàn vẹn và dung lượng tối thiểu
-        is_valid, reason = self.validate_downloaded_audio(downloaded_file)
+        size = file_path.stat().st_size
+        size_mb = size / (1024 * 1024)
+
+        if size == 0:
+            return False, "File rỗng (0 bytes)"
+
+        # Nếu biết chính xác kích thước dự kiến từ máy chủ: yêu cầu đạt ít nhất 95%
+        if expected_size and expected_size > 0:
+            if size < expected_size * 0.95:
+                return False, (
+                    f"Dung lượng file chưa hoàn tất ({size_mb:.2f} MB), "
+                    f"thấp hơn 95% dung lượng công bố ({expected_size / (1024*1024):.2f} MB)"
+                )
+        else:
+            if size < MIN_AUDIO_FILE_SIZE_BYTES:
+                return False, (
+                    f"Dung lượng file quá nhỏ ({size_mb:.2f} MB), "
+                    f"không đạt ngưỡng tối thiểu {MIN_AUDIO_FILE_SIZE_MB:.1f} MB (nghi ngờ đứt mạng hoặc tải dở)"
+                )
+
+        # Kiểm tra tính toàn vẹn container audio qua ffprobe (nếu có sẵn ffprobe)
+        ffprobe_bin = shutil.which("ffprobe")
+        if ffprobe_bin:
+            try:
+                probe_cmd = [
+                    ffprobe_bin,
+                    "-v",
+                    "error",
+                    "-show_entries",
+                    "format=duration",
+                    "-of",
+                    "default=noprint_wrappers=1:nokey=1",
+                    str(file_path),
+                ]
+                res = subprocess.run(
+                    probe_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=False
+                )
+                if res.returncode != 0:
+                    err_text = res.stderr.strip() or "lỗi container audio / thiếu moov atom"
+                    return False, f"ffprobe phát hiện file audio hỏng: {err_text}"
+
+                duration_str = res.stdout.strip()
+                if duration_str:
+                    duration_sec = float(duration_str)
+                    if duration_sec <= 0:
+                        return False, "Thời lượng audio không hợp lệ (<= 0 giây)"
+                    logging.info(
+                        f"[Downloader] ffprobe kiểm tra OK: thời lượng {duration_sec/3600:.2f} giờ "
+                        f"({duration_sec/60:.1f} phút)"
+                    )
+            except Exception as ex:
+                logging.warning(f"[Downloader] Không thể kiểm tra thời lượng qua ffprobe: {ex}")
+
+        return True, ""
+
+    def download_episode(
+        self, episode_item: Dict[str, str], custom_filename: Optional[str] = None
+    ) -> Path:
+        """
+        Tải 1 tập truyện và chuyển đổi sang M4A.
+        Args:
+            episode_item: Dict chứa 'audio_url', 'story_title', 'episode_title', v.v.
+            custom_filename: Tên file tùy chỉnh (không cần đuôi mở rộng)
+        Returns:
+            Path tới file audio hoàn chỉnh vừa được tạo ra trong thư mục tạm.
+        Raises:
+            RuntimeError nếu quá trình tải thất bại hoặc file không hợp lệ.
+        """
+        audio_url = episode_item.get("audio_url") or episode_item.get("episode_url")
+        episode_url = episode_item.get("episode_url")
+        story_title = episode_item.get("story_title", "UnknownStory")
+        episode_title = episode_item.get("episode_title", "UnknownEpisode")
+
+        if not audio_url:
+            raise ValueError("[Downloader] Không tìm thấy URL hợp lệ để tải.")
+
+        # Tạo tên file sạch nếu có custom_filename hoặc tự động tạo theo TênBộTruyện - TênTập
+        if not custom_filename:
+            safe_story = "".join(
+                c for c in story_title if c.isalnum() or c in (" ", "-", "_")
+            ).strip()
+            safe_episode = "".join(
+                c for c in episode_title if c.isalnum() or c in (" ", "-", "_")
+            ).strip()
+            out_stem = f"{safe_story} - {safe_episode}"
+        else:
+            out_stem = "".join(
+                c for c in custom_filename if c.isalnum() or c in (" ", "-", "_")
+            ).strip()
+
+        target_m4a = self.temp_dir / f"{out_stem}.m4a"
+        raw_temp_audio = self.temp_dir / f"raw_temp_{int(time.time()*1000)}.mp3"
+
+        logging.info(
+            f"[Downloader] Bắt đầu tải tập: '{story_title} - {episode_title}' từ URL: {audio_url}"
+        )
+
+        downloaded_file = None
+        expected_size = None
+
+        # ─── BƯỚC 1: Tải trực tiếp bằng Native Multi-Range Stream Downloader ───────────
+        try:
+            raw_path, expected_size = self._download_multirange_stream(
+                audio_url=audio_url, episode_url=episode_url, raw_file=raw_temp_audio
+            )
+            # Chuyển đổi sang M4A bằng ffmpeg (hoặc giữ raw nếu thiếu ffmpeg)
+            downloaded_file = self._convert_to_m4a(raw_path, target_m4a)
+
+        except Exception as stream_err:
+            logging.warning(
+                f"[Downloader] Native Range Stream gặp sự cố ({stream_err}). "
+                f"Kích hoạt phương án yt-dlp fallback..."
+            )
+            if raw_temp_audio.exists():
+                try:
+                    raw_temp_audio.unlink()
+                except Exception:
+                    pass
+
+            # ─── BƯỚC 2: Fallback qua yt-dlp ──────────────────────────────────────
+            try:
+                out_filename_template = f"{out_stem}.%(ext)s"
+                downloaded_file = self._download_ytdlp_fallback(
+                    episode_item, out_filename_template
+                )
+            except Exception as ytdlp_err:
+                logging.error(f"[Downloader] yt-dlp fallback cũng thất bại: {ytdlp_err}")
+                raise RuntimeError(
+                    f"Tải thất bại qua cả Native Stream ({stream_err}) và yt-dlp ({ytdlp_err})"
+                ) from stream_err
+
+        if not downloaded_file or not downloaded_file.exists():
+            raise RuntimeError(
+                f"[Downloader] Tải hoàn tất nhưng không tìm thấy file audio trong {self.temp_dir}"
+            )
+
+        # ─── BƯỚC 3: Kiểm tra tính toàn vẹn và dung lượng tối thiểu ─────────────────
+        is_valid, reason = self.validate_downloaded_audio(
+            downloaded_file, expected_size=expected_size
+        )
         if not is_valid:
             try:
                 if downloaded_file.exists():
                     downloaded_file.unlink()
-                    logging.warning(f"[Downloader] Đã xóa file hỏng vừa tải: {downloaded_file.name}")
+                    logging.warning(f"[Downloader] Đã xóa file hỏng: {downloaded_file.name}")
             except Exception as del_err:
-                logging.warning(f"[Downloader] Không thể xóa file hỏng {downloaded_file.name}: {del_err}")
+                logging.warning(
+                    f"[Downloader] Không thể xóa file hỏng {downloaded_file.name}: {del_err}"
+                )
             raise RuntimeError(f"Tập tải về không hợp lệ: {reason}")
 
         size_mb = downloaded_file.stat().st_size / (1024 * 1024)
-        logging.info(f"[Downloader] File audio M4A hoàn chỉnh & đạt chuẩn ({size_mb:.2f} MB): {downloaded_file}")
+        logging.info(
+            f"[Downloader] File audio hoàn chỉnh & đạt chuẩn ({size_mb:.2f} MB): {downloaded_file.name}"
+        )
         return downloaded_file
-
 
 
 if __name__ == "__main__":
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
-        
+
     dl = Downloader()
     sample_item = {
-        "story_title": "Test Story",
-        "episode_title": "Tap 1",
-        "audio_url": "https://metruyenaudio.online/api/audio/cmtfmsoji2e1aictyam6jopk3"
+        "story_title": "ĐẠI SƯ HUYNH HẬN MA NỮ, CẢ TÔNG MÔN LẠI MUỐN HẮN CƯỚI NÀNG",
+        "episode_title": "Chương 1",
+        "episode_url": "https://metruyenaudio.online/truyen/dai-su-huynh-han-ma-nu-ca-tong-mon-lai-muon-han-cuoi-nang/nghe/1",
+        "audio_url": "https://metruyenaudio.online/api/audio/cmupdoktl073oj84s3j7k1pwd",
     }
     try:
         file_path = dl.download_episode(sample_item)
-        print(f"Đã tải thành công file: {file_path}")
+        print(f"\n✅ Đã tải thành công file: {file_path}")
     except Exception as err:
-        print(f"Lỗi tải thử nghiệm: {err}")
+        print(f"\n❌ Lỗi tải thử nghiệm: {err}")
