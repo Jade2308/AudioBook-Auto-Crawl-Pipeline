@@ -48,16 +48,16 @@ TELEGRAM_ALLOWED_CHAT_IDS = [
 ]
 
 # Operational Configs
-CRAWL_DELAY = int(os.getenv("CRAWL_DELAY", "3"))  # Seconds delay between downloads
-MAX_STORIES_TO_CRAWL = int(os.getenv("MAX_STORIES_TO_CRAWL", "0"))  # 0 = không giới hạn số truyện
-MAX_PAGES_TO_CRAWL = int(os.getenv("MAX_PAGES_TO_CRAWL", "0"))      # 0 = quét tất cả các trang cho tới trang cuối
-MAX_CONCURRENT_TEMP_FILES = int(os.getenv("MAX_CONCURRENT_TEMP_FILES", "2")) # Giới hạn số file M4A chờ upload trong temp_dir
-AUTO_RESUME_ON_REBOOT = os.getenv("AUTO_RESUME_ON_REBOOT", "true").lower() in ("true", "1", "yes")
-NOTIFY_ON_BOT_STARTUP = os.getenv("NOTIFY_ON_BOT_STARTUP", "true").lower() in ("true", "1", "yes")
+CRAWL_DELAY = int(os.getenv("CRAWL_DELAY") or "3")
+MAX_STORIES_TO_CRAWL = int(os.getenv("MAX_STORIES_TO_CRAWL") or "0")
+MAX_PAGES_TO_CRAWL = int(os.getenv("MAX_PAGES_TO_CRAWL") or "0")
+MAX_CONCURRENT_TEMP_FILES = int(os.getenv("MAX_CONCURRENT_TEMP_FILES") or "2")
+AUTO_RESUME_ON_REBOOT = (os.getenv("AUTO_RESUME_ON_REBOOT") or "true").lower() in ("true", "1", "yes")
+NOTIFY_ON_BOT_STARTUP = (os.getenv("NOTIFY_ON_BOT_STARTUP") or "true").lower() in ("true", "1", "yes")
 
 # Audio Integrity & Validation Configs (Dành cho file truyện dài ~4 tiếng)
 # Ngưỡng dung lượng tối thiểu của 1 tập audio hợp lệ (MB)
-MIN_AUDIO_FILE_SIZE_MB = float(os.getenv("MIN_AUDIO_FILE_SIZE_MB", "20"))
+MIN_AUDIO_FILE_SIZE_MB = float(os.getenv("MIN_AUDIO_FILE_SIZE_MB") or "20")
 MIN_AUDIO_FILE_SIZE_BYTES = int(MIN_AUDIO_FILE_SIZE_MB * 1024 * 1024)
 
 
