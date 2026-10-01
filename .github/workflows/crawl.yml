@@ -1,0 +1,107 @@
+name: AudioBook Auto Crawl Pipeline
+
+on:
+  schedule:
+    # Chạy tự động 2 lần mỗi ngày:
+    # 20:00 UTC = 03:00 sáng giờ VN (UTC+7)
+    # 07:00 UTC = 14:00 chiều giờ VN (UTC+7)
+    - cron: '0 20 * * *'
+    - cron: '0 7 * * *'
+
+  workflow_dispatch:
+    # Cho phép kích hoạt thủ công từ GitHub Web / GitHub Mobile App bất cứ lúc nào
+    inputs:
+      max_stories:
+        description: 'Số truyện tối đa cần quét (0 = không giới hạn)'
+        required: false
+        default: '0'
+      max_pages:
+        description: 'Số trang tối đa cần quét (0 = không giới hạn)'
+        required: false
+        default: '0'
+
+  repository_dispatch:
+    # Cho phép kích hoạt từ xa qua Webhook (ví dụ từ Telegram Bot / Cloudflare Worker)
+    types: [trigger-crawl]
+
+# Cho phép Action ghi (push) lại history.txt và story_mappings.json vào repo
+permissions:
+  contents: write
+
+concurrency:
+  group: audiobook-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    name: Crawl, Convert & Upload
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 # Giới hạn tối đa 6 tiếng mỗi lần chạy
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install System Dependencies (FFmpeg & Rclone)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          sudo -v ; curl https://rclone.org/install.sh | sudo bash
+
+      - name: ⚙️ Configure Rclone
+        env:
+          RCLONE_CONFIG_DATA: ${{ secrets.RCLONE_CONFIG }}
+        run: |
+          mkdir -p ~/.config/rclone
+          echo "$RCLONE_CONFIG_DATA" > ~/.config/rclone/rclone.conf
+          chmod 600 ~/.config/rclone/rclone.conf
+          echo "Danh sách các remote rclone hiện có:"
+          rclone listremotes
+
+      - name: 📚 Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🚀 Run AudioBook Pipeline
+        env:
+          SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://metruyenaudio.online' }}
+          SESSION_COOKIE: ${{ secrets.SESSION_COOKIE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RCLONE_REMOTE_BASE: ${{ secrets.RCLONE_REMOTE_BASE || 'gdrive_5tb:Audiobooks' }}
+          RCLONE_TRANSFERS: '4'
+          MAX_STORIES_TO_CRAWL: ${{ inputs.max_stories || '0' }}
+          MAX_PAGES_TO_CRAWL: ${{ inputs.max_pages || '0' }}
+          CRAWL_DELAY: '3'
+          MAX_CONCURRENT_TEMP_FILES: '2'
+        run: |
+          python main.py
+
+      - name: 💾 Commit and Push Updated History & Metadata
+        if: always() # Luôn lưu lại lịch sử tải dù pipeline thành công hay có lỗi
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Đảm bảo pull mới nhất để tránh conflict
+          git pull --rebase origin main || true
+          
+          # Chỉ stage những file theo dõi lịch sử
+          git add history.txt story_mappings.json || true
+          
+          if git diff --staged --quiet; then
+            echo "Không có thay đổi mới trong history.txt hoặc story_mappings.json."
+          else
+            git commit -m "chore: auto-update history and story mappings [skip ci]"
+            git push origin main
+            echo "Đã lưu lịch sử tải thành công vào repository!"
+          fi

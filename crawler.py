@@ -1,12 +1,14 @@
 import re
+import json
 import logging
 from urllib.parse import urljoin
 from typing import List, Dict, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from config import SITE_BASE_URL, USER_AGENT, MAX_STORIES_TO_CRAWL, MAX_PAGES_TO_CRAWL, SESSION_COOKIE
+from config import SITE_BASE_URL, USER_AGENT, MAX_STORIES_TO_CRAWL, MAX_PAGES_TO_CRAWL, SESSION_COOKIE, STORY_MAPPINGS_FILE
 from state_tracker import StateTracker
+
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
@@ -106,6 +108,8 @@ class Crawler:
             h1 = soup.find("h1")
             if h1 and h1.get_text(strip=True):
                 result["story_title"] = h1.get_text(strip=True)
+                self._update_story_mapping(story_url, result["story_title"])
+
 
             # Tìm danh sách URL các tập truyện (ví dụ: /truyen/slug/nghe/1)
             listen_urls = []
@@ -207,8 +211,44 @@ class Crawler:
         logging.info(f"[Crawler] Hoàn tất quét. Tổng số tập mới cần tải: {len(new_items)}")
         return new_items
 
+    def _update_story_mapping(self, story_url: str, story_title: str) -> None:
+        """Tự động ghi nhận ánh xạ giữa story_url slug và tên folder Drive vào story_mappings.json."""
+        try:
+            from drive_verifier import slugify_vn
+            clean_url = story_url.rstrip("/")
+            if "/truyen/" in clean_url:
+                story_slug = clean_url.split("/truyen/")[-1].split("/")[0]
+            else:
+                story_slug = clean_url.split("/")[-1]
+
+            if not story_slug:
+                return
+
+            safe_folder = "".join(c for c in story_title if c.isalnum() or c in (" ", "-", "_", ".")).strip()
+            folder_slug = slugify_vn(safe_folder)
+
+            mappings = {}
+            if STORY_MAPPINGS_FILE.exists() and STORY_MAPPINGS_FILE.stat().st_size > 0:
+                try:
+                    with open(STORY_MAPPINGS_FILE, "r", encoding="utf-8") as f:
+                        mappings = json.load(f)
+                except Exception:
+                    mappings = {}
+
+            if story_slug not in mappings or mappings[story_slug].get("folder_slug") != folder_slug:
+                mappings[story_slug] = {
+                    "title": story_title,
+                    "folder_slug": folder_slug
+                }
+                with open(STORY_MAPPINGS_FILE, "w", encoding="utf-8") as f:
+                    json.dump(mappings, f, ensure_ascii=False, indent=2)
+                logging.info(f"[Crawler] Đã lưu ánh xạ bộ truyện: '{story_slug}' -> '{folder_slug}'")
+        except Exception as ex:
+            logging.debug(f"[Crawler] Không thể lưu story_mapping: {ex}")
+
 
 if __name__ == "__main__":
+
     # Test Module 2
     crawler = Crawler()
     tracker = StateTracker("test_crawler_history.txt")

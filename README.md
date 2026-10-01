@@ -15,7 +15,9 @@ Hệ thống được thiết kế chuẩn hướng đối tượng (OOP) và mo
 | **Module 3** | `downloader.py` | **Downloader**: Gọi `yt-dlp` kết hợp `ffmpeg` qua `subprocess` để tải và ép kiểu âm thanh sang định dạng `.m4a`. |
 | **Module 4** | `uploader.py` | **Uploader**: Gọi `rclone move` qua `subprocess` để đẩy file lên Google Drive theo cấu trúc thư mục bộ truyện và tự động xóa file tạm giải phóng ổ cứng. |
 | **Module 5** | `notifier.py` | **Notifier**: Kết nối Telegram Bot API (`requests.post`) để gửi báo cáo trạng thái (Thành công, Thất bại, hoặc Rỗng). |
-| **Module 6** | `main.py` | **Main Controller**: Điều phối tiến trình theo luồng tuyến tính, xử lý ngoại lệ `try...except` và nghỉ 3s giữa các lượt tải. |
+| **Module 6** | `main.py` | **Main Controller**: Điều phối tiến trình theo mô hình Producer-Consumer đa luồng (Queue trung gian) tối ưu hiệu năng. |
+| **Module 7** | `telegram_bot.py` | **Telegram Bot Controller**: Nhận lệnh điều khiển từ xa qua Telegram (`/run`, `/status`, `/stop`, `/log`, `/history`). |
+| **Module 8** | `drive_verifier.py` | **Drive Verifier**: Đọc Google Drive qua `rclone`, đối soát 2 chiều với `history.txt`, hỗ trợ đồng bộ (`/check_drive`, `/sync_history`). |
 
 ---
 
@@ -115,6 +117,60 @@ Thêm dòng sau để chạy tự động lúc **02:00 sáng mỗi ngày**:
 
 ---
 
-## 📜 6. Giấy phép & Đóng góp
+## 🔍 6. Đối Soát Google Drive Với History (`drive_verifier.py`)
+
+Hệ thống cung cấp cơ chế quét thư mục Google Drive qua `rclone`, bóc tách số tập và đối soát 2 chiều với `history.txt`:
+- **Phát hiện tập có trong history nhưng THIẾU trên Drive:** Giúp xác định các tập cần tải bù.
+- **Phát hiện tập có trên Drive nhưng THIẾU trong history:** Giúp nạp vào history để không bị tải lặp khi dọn file history.
+
+### Các lệnh CLI hỗ trợ:
+```bash
+# 1. Kiểm tra đối soát và xuất báo cáo chi tiết
+python3 drive_verifier.py --check
+
+# 2. Tự động đồng bộ các file từ Google Drive vào history.txt (tự động tạo backup .bak)
+python3 drive_verifier.py --sync
+
+# 3. Loại bỏ khỏi history.txt những mục không có file trên Drive (để pipeline tải bù)
+python3 drive_verifier.py --prune
+
+# 4. Kiểm tra giả lập với thư mục cục bộ (dành cho test offline)
+python3 drive_verifier.py --check --local-dir ./temp_downloads
+```
+
+### Điều khiển qua Telegram Bot:
+Bạn có thể chạy trực tiếp từ Telegram:
+- `/check_drive`: Chạy đối soát ngầm và gửi bảng báo cáo thống kê qua chat.
+- `/sync_history`: Đồng bộ file Drive vào `history.txt` trực tiếp qua 1 chạm.
+
+---
+
+## 🤖 7. Điều Khiển Qua Telegram Bot (`telegram_bot.py`)
+
+Khởi động bot thường trực (daemon):
+```bash
+python3 run_bot.py
+```
+Các lệnh bot hỗ trợ:
+- `/run` — Khởi động pipeline cào truyện ngầm.
+- `/schedule` — Cài đặt & quản lý lịch chạy tự động trực tiếp trên Telegram:
+  + `/schedule` — Xem trạng thái & thời gian chạy tiếp theo.
+  + `/schedule on` / `/schedule off` — Bật / tắt lịch chạy tự động.
+  + `/schedule set 02:00, 14:00` — Cài đặt các mốc giờ chạy cố định hàng ngày (HH:MM).
+  + `/schedule every 6h` — Cài đặt chạy lặp lại sau mỗi chu kỳ N giờ (hoặc 30m).
+  + `/schedule in 45m` — Hẹn giờ chạy 1 lần duy nhất sau N phút (hoặc 2h).
+  + `/schedule clear` — Xóa và reset cấu hình lịch về mặc định.
+- `/status` — Kiểm tra trạng thái pipeline & thông tin lịch chạy tự động.
+- `/check_drive` — Đối soát file Google Drive với history.txt.
+- `/sync_history` — Nạp các file trên Drive vào history.txt.
+- `/fix_corrupted` — Dọn tập hỏng/thiếu dung lượng trên Drive để tải lại.
+- `/log` — Xem 30 dòng log mới nhất thời gian thực.
+- `/logfile` — Tải toàn bộ file `.log` về máy.
+- `/history` — Xem danh sách 15 tập gần nhất đã tải.
+- `/stop` — Dừng pipeline khẩn cấp.
+
+---
+
+## 📜 8. Giấy phép & Đóng góp
 
 Dự án phát triển phục vụ mục đích học tập và tự động hóa cá nhân.

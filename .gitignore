@@ -1,0 +1,30 @@
+# Environment & Secrets
+.env
+*.env
+cookies.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Temporary & Downloaded Files
+temp_downloads/
+*.tmp
+*.part
+*.ytdl
+
+# Logs & Local Runtime States
+logs/
+*.log
+pipeline_state.json
+schedule_config.json
+
+# OS specific
+.DS_Store
+Thumbs.db

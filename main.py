@@ -2,6 +2,8 @@ import os
 import sys
 import time
 import logging
+import queue
+import threading
 from typing import List, Dict
 
 from config import (
@@ -12,7 +14,9 @@ from config import (
     TELEGRAM_BOT_TOKEN,
     TELEGRAM_CHAT_ID,
     CRAWL_DELAY,
-    SITE_BASE_URL
+    SITE_BASE_URL,
+    MAX_CONCURRENT_TEMP_FILES,
+    LOGS_DIR,
 )
 from state_tracker import StateTracker
 from crawler import Crawler
@@ -20,19 +24,23 @@ from downloader import Downloader
 from uploader import Uploader
 from notifier import Notifier
 
-# Configure Logging
+# Configure Logging: vừa in ra console, vừa ghi file để Telegram Bot có thể đọc bất kỳ lúc nào
+latest_log_path = LOGS_DIR / "pipeline_latest.log"
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.StreamHandler(sys.stdout)
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler(latest_log_path, encoding="utf-8", mode="w")
     ]
 )
 
 class MainController:
     """
     Module 6: Main Controller (Điều phối & Kịch bản chính)
-    Ghép nối 5 module độc lập theo quy trình tuyến tính tự động.
+    Ghép nối 5 module theo mô hình Producer-Consumer (Đa luồng):
+    - Downloader Producer: Tải & Convert M4A song song.
+    - Uploader Consumer: Đẩy file M4A lên Google Drive & dọn dẹp.
     """
     def __init__(self):
         logging.info("==================================================")
@@ -48,10 +56,10 @@ class MainController:
 
     def run(self):
         """
-        Thực thi quy trình tự động tuyến tính chính:
+        Thực thi quy trình tự động bất đồng bộ / song song:
         Step 1: Quét danh sách link mới từ Crawler.
         Step 2: Nếu rỗng -> Gửi thông báo Telegram -> Thoát.
-        Step 3: Duyệt vòng lặp: Downloader -> Uploader -> Save State -> Sleep.
+        Step 3: Chạy song song: Downloader Producer -> Queue -> Uploader Consumer.
         Step 4: Tổng hợp kết quả và báo cáo Telegram.
         """
         # Step 1: Lấy danh sách link mới (đã lọc trùng bằng State Tracker)
@@ -70,48 +78,135 @@ class MainController:
             return
 
         logging.info(f"[MainController] Tìm thấy {len(new_episodes)} tập mới cần xử lý.")
+        logging.info(f"[MainController] Khởi tạo mô hình Producer-Consumer (Max queue size: {MAX_CONCURRENT_TEMP_FILES}).")
 
         succeeded_items = []
         failed_items = []
+        total_items = len(new_episodes)
+        results_lock = threading.Lock()
 
-        # Step 3: Chạy vòng lặp qua từng tập truyện mới
-        for idx, item in enumerate(new_episodes, 1):
-            story_title = item.get("story_title", "Unknown Story")
-            episode_title = item.get("episode_title", "Unknown Episode")
-            unique_id = item.get("unique_id", item.get("audio_url"))
+        # Hàng đợi trung gian chứa các file đã download xong chờ upload
+        upload_queue: queue.Queue = queue.Queue(maxsize=MAX_CONCURRENT_TEMP_FILES)
 
-            logging.info(f"\n---> [{idx}/{len(new_episodes)}] Đang xử lý: {story_title} - {episode_title}")
+        # --- Producer Thread: Downloader ---
+        def downloader_producer():
+            for idx, item in enumerate(new_episodes, 1):
+                story_title = item.get("story_title", "Unknown Story")
+                episode_title = item.get("episode_title", "Unknown Episode")
+                overall_percent = (idx / total_items) * 100
 
-            try:
-                # 3a. Downloader: Tải file audio và xuất dạng M4A
-                m4a_path = self.downloader.download_episode(item)
+                print("\n" + "=" * 80)
+                logging.info(f"📊 TIẾN TRÌNH TỔNG THỂ: Tập [{idx}/{total_items}] ({overall_percent:.2f}%)")
+                logging.info(f"📖 Bộ truyện : {story_title}")
+                logging.info(f"🎧 Tập/Chương: {episode_title}")
+                print("=" * 80)
 
-                # 3b. Uploader: Đẩy file M4A lên Google Drive và tự động xóa file cục bộ
-                upload_success = self.uploader.upload_and_cleanup(
-                    file_path=m4a_path,
-                    story_title=story_title
-                )
+                try:
+                    logging.info(f"⬇️ [PRODUCER] Bắt đầu tải audio về VPS (Downloader)...")
+                    m4a_path = self.downloader.download_episode(item)
 
-                if not upload_success:
-                    raise RuntimeError(f"Tải file thành công nhưng upload rclone move thất bại cho '{m4a_path.name}'")
+                    # Đưa vào queue để Uploader xử lý (nếu queue đầy sẽ tạm dừng chờ Uploader dọn bớt file)
+                    logging.info(f"📥 [PRODUCER] Tải xong '{m4a_path.name}'. Đẩy vào Queue chờ Upload...")
+                    upload_queue.put({
+                        "item": item,
+                        "m4a_path": m4a_path,
+                        "idx": idx,
+                        "total_items": total_items
+                    })
 
-                # 3c. State Tracker: Ghi nhận lịch sử đã tải xong
-                self.state_tracker.save_downloaded(unique_id)
-                succeeded_items.append(item)
-                logging.info(f"===> [{idx}/{len(new_episodes)}] Hoàn tất thành công: {story_title} - {episode_title}")
+                except Exception as ep_error:
+                    logging.error(f"❌ [LỖI DOWNLOAD {idx}/{total_items}] Thất bại tại tập '{story_title} - {episode_title}': {ep_error}")
+                    with results_lock:
+                        failed_items.append({
+                            "story_title": story_title,
+                            "episode_title": episode_title,
+                            "error": f"Lỗi download: {ep_error}"
+                        })
 
-            except Exception as ep_error:
-                logging.error(f"!!! [{idx}/{len(new_episodes)}] Lỗi xử lý tập '{story_title} - {episode_title}': {ep_error}")
-                failed_items.append({
-                    "story_title": story_title,
-                    "episode_title": episode_title,
-                    "error": str(ep_error)
-                })
+                # Tránh bị web chặn IP: Nghỉ CRAWL_DELAY giây giữa các lượt tải
+                if idx < total_items:
+                    logging.info(f"⏳ Tạm dừng {CRAWL_DELAY}s trước khi sang tập tiếp theo...")
+                    time.sleep(CRAWL_DELAY)
 
-            # 3d. Tránh bị web chặn IP: Nghỉ CRAWL_DELAY giây giữa các lượt tải
-            if idx < len(new_episodes):
-                logging.info(f"[MainController] Tạm dừng {CRAWL_DELAY} giây trước khi tải tập tiếp theo...")
-                time.sleep(CRAWL_DELAY)
+            # Báo hiệu cho Uploader Consumer dừng lại khi đã tải hết
+            upload_queue.put(None)
+            logging.info("🏁 [PRODUCER] Đã hoàn thành tải toàn bộ danh sách tập.")
+
+        # --- Consumer Thread: Uploader ---
+        def uploader_consumer():
+            while True:
+                task = upload_queue.get()
+                if task is None:
+                    upload_queue.task_done()
+                    break
+
+                item = task["item"]
+                m4a_path = task["m4a_path"]
+                idx = task["idx"]
+                total = task["total_items"]
+
+                story_title = item.get("story_title", "Unknown Story")
+                episode_title = item.get("episode_title", "Unknown Episode")
+                unique_id = item.get("unique_id", item.get("audio_url"))
+
+                try:
+                    logging.info(f"⬆️ [CONSUMER {idx}/{total}] Đang đẩy file lên Google Drive: {m4a_path.name}")
+                    upload_success = self.uploader.upload_and_cleanup(
+                        file_path=m4a_path,
+                        story_title=story_title
+                    )
+
+                    if not upload_success:
+                        raise RuntimeError(f"Upload rclone move thất bại cho '{m4a_path.name}'")
+
+                    # Ghi nhận lịch sử đã tải & upload thành công
+                    self.state_tracker.save_downloaded(unique_id)
+                    with results_lock:
+                        succeeded_items.append(item)
+
+                    logging.info(f"✅ [THÀNH CÔNG {idx}/{total}] Đã upload và ghi history.txt: {story_title} - {episode_title}")
+
+                    # 🔔 Thông báo Telegram: mỗi tập thành công
+                    self.notifier.notify_episode_success(
+                        story_title=story_title,
+                        episode_title=episode_title,
+                        idx=idx,
+                        total=total
+                    )
+
+                except Exception as up_error:
+                    logging.error(f"❌ [LỖI UPLOAD {idx}/{total}] Thất bại tại tập '{story_title} - {episode_title}': {up_error}")
+                    with results_lock:
+                        failed_items.append({
+                            "story_title": story_title,
+                            "episode_title": episode_title,
+                            "error": f"Lỗi upload: {up_error}"
+                        })
+                    # 🔔 Thông báo Telegram: upload lỗi ngay lập tức
+                    self.notifier.notify_episode_failure(
+                        story_title=story_title,
+                        episode_title=episode_title,
+                        idx=idx,
+                        total=total,
+                        error=str(up_error)
+                    )
+
+                finally:
+                    upload_queue.task_done()
+
+            logging.info("🏁 [CONSUMER] Đã hoàn thành upload toàn bộ các tập trong Queue.")
+
+        # Step 3: Tạo và kích hoạt các luồng
+        producer_thread = threading.Thread(target=downloader_producer, name="DownloaderProducer")
+        consumer_thread = threading.Thread(target=uploader_consumer, name="UploaderConsumer")
+
+        producer_thread.start()
+        consumer_thread.start()
+
+        # Chờ cả 2 luồng hoàn thành tác vụ
+        producer_thread.join()
+        consumer_thread.join()
+
 
         # Step 4: Tổng hợp kết quả & gửi thông báo Telegram
         logging.info("\n==================================================")

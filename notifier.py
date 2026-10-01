@@ -98,6 +98,33 @@ class Notifier:
         ]
         return self.send_message("\n".join(msg_lines))
 
+    def notify_episode_success(self, story_title: str, episode_title: str, idx: int, total: int) -> bool:
+        """
+        Thông báo real-time ngay sau khi upload 1 tập thành công.
+        """
+        percent = (idx / total) * 100
+        msg = (
+            f"✅ <b>[UPLOAD THÀNH CÔNG]</b>\n"
+            f"📖 <b>Truyện:</b> {story_title}\n"
+            f"🎧 <b>Tập:</b> {episode_title}\n"
+            f"📊 <b>Tiến trình:</b> {idx}/{total} ({percent:.1f}%)"
+        )
+        return self.send_message(msg)
+
+    def notify_episode_failure(self, story_title: str, episode_title: str, idx: int, total: int, error: str) -> bool:
+        """
+        Thông báo real-time ngay khi upload 1 tập bị lỗi.
+        """
+        percent = (idx / total) * 100
+        msg = (
+            f"❌ <b>[UPLOAD LỖI]</b>\n"
+            f"📖 <b>Truyện:</b> {story_title}\n"
+            f"🎧 <b>Tập:</b> {episode_title}\n"
+            f"📊 <b>Tiến trình:</b> {idx}/{total} ({percent:.1f}%)\n"
+            f"⚠️ <b>Lỗi:</b> <code>{error[:200]}</code>"
+        )
+        return self.send_message(msg)
+
 
 if __name__ == "__main__":
     if sys.platform == "win32":

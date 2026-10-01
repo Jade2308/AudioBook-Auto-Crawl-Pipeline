@@ -49,20 +49,23 @@ class Uploader:
             str(path_obj),
             f"{remote_target_dir}/",
             "--transfers", str(self.transfers),
-            "-v"
+            "-P",
+            "-v",
+            "--stats", "10s",
+            "--stats-one-line"
         ]
 
         logging.info(f"[Uploader] Bắt đầu đẩy file '{path_obj.name}' lên Remote: {remote_target_dir}")
         logging.info(f"[Uploader] Đang thực thi lệnh subprocess: {' '.join(cmd)}")
 
         try:
+            # Chạy rclone move trực tiếp xuất thanh tiến trình phần trăm % real-time
             result = subprocess.run(
                 cmd,
-                capture_output=True,
-                text=True,
                 check=True
             )
             logging.info(f"[Uploader] rclone move hoàn tất thành công cho '{path_obj.name}'.")
+
             
             # Kiểm tra xem rclone move đã xóa file chưa (nếu rclone move chưa xóa do cấu hình, chủ động xóa)
             if path_obj.exists():

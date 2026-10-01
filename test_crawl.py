@@ -8,10 +8,15 @@ from urllib.parse import urljoin
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
+from config import SESSION_COOKIE, USER_AGENT
+
 BASE_URL = "https://metruyenaudio.online"
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    'User-Agent': USER_AGENT
 }
+if SESSION_COOKIE.strip():
+    headers['Cookie'] = SESSION_COOKIE.strip()
+
 
 def crawl_test():
     print("==================================================")
