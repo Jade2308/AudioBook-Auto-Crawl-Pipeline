@@ -2,6 +2,8 @@
 .env
 *.env
 cookies.txt
+*sa*.json
+sa.json
 
 # Python
 __pycache__/

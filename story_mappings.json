@@ -3,552 +3,568 @@
     "title": "BẠN GỌI CÁI NÀY LÀ DIỄN XUẤT SAO, DIỄN KẺ NGHIỆN MÀ GỌI CẢ CẢNH SÁT ĐẾN À",
     "folder_slug": "ban-goi-cai-nay-la-dien-xuat-sao-dien-ke-nghien-ma-goi-ca-canh-sat-den-a"
   },
-  "livestream-truc-tiep-moi-ngay-mot-lan-gay-chan-dong-coi-mang": {
-    "title": "LIVESTREAM TRỰC TIẾP: MỖI NGÀY MỘT LẦN GÂY CHẤN ĐỘNG CÕI MẠNG",
-    "folder_slug": "livestream-truc-tiep-moi-ngay-mot-lan-gay-chan-dong-coi-mang"
-  },
-  "ke-bat-nat-bao-toi-khong-hieu-luat-ket-qua-no-nhan-an-tu": {
-    "title": "KẺ BẮT NẠT BẢO TÔI KHÔNG HIỂU LUẬT, KẾT QUẢ NÓ NHẬN ÁN TỬ",
-    "folder_slug": "ke-bat-nat-bao-toi-khong-hieu-luat-ket-qua-no-nhan-an-tu"
+  "dai-su-huynh-nay-khong-dang-tin-nhung-ca-tong-mon-lai-phai-dua-vao-han": {
+    "title": "ĐẠI SƯ HUYNH NÀY KHÔNG ĐÁNG TIN, NHƯNG CẢ TÔNG MÔN LẠI PHẢI DỰA VÀO HẮN",
+    "folder_slug": "dai-su-huynh-nay-khong-dang-tin-nhung-ca-tong-mon-lai-phai-dua-vao-han"
   },
   "luat-su-nay-khong-binh-thuong-den-toan-an-cung-dam-kien": {
     "title": "LUẬT SƯ NÀY KHÔNG BÌNH THƯỜNG, ĐẾN TOÀN ÁN CŨNG DÁM KIỆN",
     "folder_slug": "luat-su-nay-khong-binh-thuong-den-toan-an-cung-dam-kien"
   },
-  "nhan-sac-vuot-troi-dien-xuat-than-sau-toi-khien-ca-gioi-giai-tri-dien-dao": {
-    "title": "Nhan Sắc Vượt Trội, Diễn Xuất Thần Sầu: Tôi Khiến Cả Giới Giải Trí Điên Đảo!",
-    "folder_slug": "nhan-sac-vuot-troi-dien-xuat-than-sau-toi-khien-ca-gioi-giai-tri-dien-dao"
-  },
-  "tu-tieu-thit-tuoi-yeu-duoi-den-vua-sinh-ton-toi-khien-ca-show-truyen-hinh-chan-dong": {
-    "title": "Từ Tiểu Thịt Tươi Yếu Đuối Đến Vua Sinh Tồn: Tôi Khiến Cả Show Truyền Hình Chấn Động",
-    "folder_slug": "tu-tieu-thit-tuoi-yeu-duoi-den-vua-sinh-ton-toi-khien-ca-show-truyen-hinh-chan-dong"
-  },
-  "dai-su-huynh-nay-khong-dang-tin-nhung-ca-tong-mon-lai-phai-dua-vao-han": {
-    "title": "ĐẠI SƯ HUYNH NÀY KHÔNG ĐÁNG TIN, NHƯNG CẢ TÔNG MÔN LẠI PHẢI DỰA VÀO HẮN",
-    "folder_slug": "dai-su-huynh-nay-khong-dang-tin-nhung-ca-tong-mon-lai-phai-dua-vao-han"
-  },
-  "tu-game-thu-bi-cam-tai-khoan-oan-uc-den-ke-khien-cac-ong-lon-cua-ca-nganh-game-run-so": {
-    "title": "Từ Game Thủ Bị Cấm Tài Khoản Oan Ức Đến Kẻ Khiến Các Ông Lớn Của Cả Ngành Game Run Sợ",
-    "folder_slug": "tu-game-thu-bi-cam-tai-khoan-oan-uc-den-ke-khien-cac-ong-lon-cua-ca-nganh-game-run-so"
-  },
-  "gia-vo-tan-tat-de-tham-gia-show-idoltoi-tung-buoc-khien-ca-nganh-giai-tri-phat-cuong": {
-    "title": "Giả Vờ Tàn Tật Để Tham Gia Show Idol,Tôi Từng Bước Khiến Cả Ngành Giải Trí Phát Cuồng!",
-    "folder_slug": "gia-vo-tan-tat-de-tham-gia-show-idol-toi-tung-buoc-khien-ca-nganh-giai-tri-phat-cuong"
-  },
-  "tu-ke-that-nghiep-den-ong-trum-gioi-giai-tri-moi-bai-hat-cua-toi-deu-la-sieu-pham-bat-hu": {
-    "title": "Từ Kẻ Thất Nghiệp Đến Ông Trùm Giới Giải Trí, Mỗi Bài Hát Của Tôi Đều Là Siêu Phẩm Bất Hủ!",
-    "folder_slug": "tu-ke-that-nghiep-den-ong-trum-gioi-giai-tri-moi-bai-hat-cua-toi-deu-la-sieu-pham-bat-hu"
-  },
-  "tiep-quan-khu-du-lich-hoang-phe-toi-khien-ca-nuoc-phat-cuong": {
-    "title": "TIẾP QUẢN KHU DU LỊCH HOANG PHẾ, TÔI KHIẾN CẢ NƯỚC PHÁT CUỒNG",
-    "folder_slug": "tiep-quan-khu-du-lich-hoang-phe-toi-khien-ca-nuoc-phat-cuong"
-  },
-  "so-huu-he-thong-nhan-cach-tu-dien-vien-quan-chung-den-anh-de": {
-    "title": "SỞ HỮU HỆ THỐNG NHÂN CÁCH: TỪ DIỄN VIÊN QUẦN CHÚNG ĐẾN ẢNH ĐẾ",
-    "folder_slug": "so-huu-he-thong-nhan-cach-tu-dien-vien-quan-chung-den-anh-de"
-  },
-  "tu-sao-het-thoi-den-anh-de-dien-nhat-showbiz-toi-dua-vao-say-ruou-de-thanh-dinh-luu": {
-    "title": "Từ Sao Hết Thời Đến Ảnh Đế Điên Nhất Showbiz, Tôi Dựa Vào Say Rượu Để Thành Đỉnh Lưu!",
-    "folder_slug": "tu-sao-het-thoi-den-anh-de-dien-nhat-showbiz-toi-dua-vao-say-ruou-de-thanh-dinh-luu"
-  },
-  "tham-gia-show-du-lich-cac-nu-minh-tinh-lai-muon-hen-ho-voi-toi": {
-    "title": "Tham Gia Show Du Lịch, Các Nữ Minh Tinh Lại Muốn Hẹn Hò Với Tôi",
-    "folder_slug": "tham-gia-show-du-lich-cac-nu-minh-tinh-lai-muon-hen-ho-voi-toi"
-  },
-  "moi-tam-tuoi-da-bi-ket-an-20-nam-tu-chi-vi-lam-gia-dong-do-la": {
-    "title": "Mới Tám Tuổi Đã Bị Kết Án 20 Năm Tù, Chỉ Vì Làm Giả Đồng Đô La!",
-    "folder_slug": "moi-tam-tuoi-da-bi-ket-an-20-nam-tu-chi-vi-lam-gia-dong-do-la"
-  },
-  "bi-loai-khoi-show-tuyen-tu-toi-dung-mot-ca-khuc-ma-phong-than": {
-    "title": "Từ Kẻ Vô Danh Đến Đỉnh Lưu, Tôi Dùng Một Ca Khúc Chấn Động Cả Giới Giải Trí",
-    "folder_slug": "tu-ke-vo-danh-den-dinh-luu-toi-dung-mot-ca-khuc-chan-dong-ca-gioi-giai-tri"
-  },
-  "bat-toi-dong-phan-dien-xin-loi-toi-dien-thanh-trum-cuoi-luon-roi": {
-    "title": "Bắt Tôi Đóng Phản Diện? Xin Lỗi, Tôi Diễn Thành Trùm Cuối Luôn Rồi!",
-    "folder_slug": "bat-toi-dong-phan-dien-xin-loi-toi-dien-thanh-trum-cuoi-luon-roi"
-  },
-  "tu-nha-lam-game-den-dinh-cao-tu-ban-toi-chi-muon-lam-game-sao-lai-thanh-dinh-luu-roi": {
-    "title": "Từ Nhà Làm Game Đến Đỉnh Cao Tư Bản: Tôi Chỉ Muốn Làm Game, Sao Lại Thành Đỉnh Lưu Rồi?",
-    "folder_slug": "tu-nha-lam-game-den-dinh-cao-tu-ban-toi-chi-muon-lam-game-sao-lai-thanh-dinh-luu-roi"
-  },
   "ung-thu-nao-giai-doan-cuoi-toi-chi-con-90-ngay-nhung-lai-co-he-thong-toan-menh": {
     "title": "Ung Thư Não Giai Đoạn Cuối, Tôi Chỉ Còn 90 Ngày Nhưng Lại Có Hệ Thống Toán Mệnh",
     "folder_slug": "ung-thu-nao-giai-doan-cuoi-toi-chi-con-90-ngay-nhung-lai-co-he-thong-toan-menh"
-  },
-  "ca-showbiz-dang-phat-dien-truy-lung-than-am-nhac-nhung-khong-ai-biet-nguoi-do-chinh-la-toi": {
-    "title": "Cả Showbiz Đang Phát Điên Truy Lùng Thần Âm Nhạc, Nhưng Không Ai Biết Người Đó Chính Là Tôi!",
-    "folder_slug": "ca-showbiz-dang-phat-dien-truy-lung-than-am-nhac-nhung-khong-ai-biet-nguoi-do-chinh-la-toi"
-  },
-  "he-thong-ngu-dan-dai-duong-bat-dau-tu-viec-cau-ca-du-vang-lon": {
-    "title": "HỆ THỐNG NGƯ DÂN ĐẠI DƯƠNG: BẮT ĐẦU TỪ VIỆC CÂU CÁ ĐÙ VÀNG LỚN",
-    "folder_slug": "he-thong-ngu-dan-dai-duong-bat-dau-tu-viec-cau-ca-du-vang-lon"
-  },
-  "toi-chi-la-dien-vien-sao-ai-cung-nghi-toi-la-toi-pham": {
-    "title": "TÔI CHỈ LÀ DIỄN VIÊN, SAO AI CŨNG NGHĨ TÔI LÀ TỘI PHẠM",
-    "folder_slug": "toi-chi-la-dien-vien-sao-ai-cung-nghi-toi-la-toi-pham"
-  },
-  "mau-dung-tay-lai-di-noi-quy-nha-truong-sap-viet-khong-xue-roi": {
-    "title": "MAU DỪNG TAY LẠI ĐI NỘI QUY NHÀ TRƯỜNG SẮP VIẾT KHÔNG XUỂ RỒI",
-    "folder_slug": "mau-dung-tay-lai-di-noi-quy-nha-truong-sap-viet-khong-xue-roi"
-  },
-  "tiep-quan-cong-ty-game-pha-san-toi-quyet-dinh-lam-mot-tua-game-khien-ca-mang-noi-dien": {
-    "title": "Tiếp Quản Công Ty Game Phá Sản, Tôi Quyết Định Làm Một Tựa Game Khiến Cả Mạng Nổi Điên",
-    "folder_slug": "tiep-quan-cong-ty-game-pha-san-toi-quyet-dinh-lam-mot-tua-game-khien-ca-mang-noi-dien"
-  },
-  "mot-nguoi-vo-so-than-phan-can-quet-toan-bo-gioi-giai-tri": {
-    "title": "MỘT NGƯỜI VÔ SỐ THÂN PHẬN CÀN QUÉT TOÀN BỘ GIỚI GIẢI TRÍ",
-    "folder_slug": "mot-nguoi-vo-so-than-phan-can-quet-toan-bo-gioi-giai-tri"
-  },
-  "ca-gioi-giai-tri-khong-ai-ngo-ong-chu-dung-sau-hang-loat-minh-tinh-lai-la-toi": {
-    "title": "Cả Giới Giải Trí Không Ai Ngờ, Ông Chủ Đứng Sau Hàng Loạt Minh Tinh Lại Là Tôi",
-    "folder_slug": "ca-gioi-giai-tri-khong-ai-ngo-ong-chu-dung-sau-hang-loat-minh-tinh-lai-la-toi"
-  },
-  "thoi-dai-chu-than-ket-thuc-ta-mot-minh-duc-lai-tien-dao": {
-    "title": "THỜI ĐẠI CHƯ THẦN KẾT THÚC, TA MỘT MÌNH ĐÚC LẠI TIÊN ĐẠO",
-    "folder_slug": "thoi-dai-chu-than-ket-thuc-ta-mot-minh-duc-lai-tien-dao"
-  },
-  "ban-hang-rong-bi-an-ninh-ruot-khap-thanh-pho-ket-qua-ho-lai-thanh-khach-ruot-cua-toi": {
-    "title": "Bán Hàng Rong Bị An Ninh Rượt Khắp Thành Phố, Kết Quả Họ Lại Thành Khách Ruột Của Tôi",
-    "folder_slug": "ban-hang-rong-bi-an-ninh-ruot-khap-thanh-pho-ket-qua-ho-lai-thanh-khach-ruot-cua-toi"
-  },
-  "tu-ke-vo-danh-den-ong-trum-giai-tri-ta-dieu-khien-ca-de-che-nu-minh-tinh": {
-    "title": "Từ Kẻ Vô Danh Đến Ông Trùm Giải Trí: Tôi Điều Khiển Cả Đế Chế Nữ Minh Tinh!",
-    "folder_slug": "tu-ke-vo-danh-den-ong-trum-giai-tri-toi-dieu-khien-ca-de-che-nu-minh-tinh"
-  },
-  "tu-ke-bi-ghet-nhat-showbiz-den-vua-gameshow-toi-co-he-thong-giai-tri-sieu-pham": {
-    "title": "Từ Kẻ Bị Ghét Nhất Showbiz Đến Vua Gameshow: Tôi Có Hệ Thống Giải Trí Siêu Phàm!",
-    "folder_slug": "tu-ke-bi-ghet-nhat-showbiz-den-vua-gameshow-toi-co-he-thong-giai-tri-sieu-pham"
-  },
-  "tham-gia-show-hen-ho-toi-co-tinh-e-nhung-nu-than-lai-do-hang-loat": {
-    "title": "Tham Gia Show Hẹn Hò, Tôi Cố Tình Ế Nhưng Nữ Thần Lại Đổ Hàng Loạt!",
-    "folder_slug": "tham-gia-show-hen-ho-toi-co-tinh-e-nhung-nu-than-lai-do-hang-loat"
-  },
-  "xuyen-ve-thoi-bao-cap-cuoi-vo-dep-lam-dai-lao": {
-    "title": "XUYÊN VỀ THỜI BAO CẤP: CƯỚI VỢ ĐẸP, LÀM ĐẠI LÃO",
-    "folder_slug": "xuyen-ve-thoi-bao-cap-cuoi-vo-dep-lam-dai-lao"
-  },
-  "dien-vai-toi-pham-qua-dinh-fan-toan-nghi-toi-la-hung-thu-that": {
-    "title": "DIỄN VAI TỘI PHẠM QUÁ ĐỈNH FAN TOÀN NGHI TÔI LÀ HUNG THỦ THẬT",
-    "folder_slug": "dien-vai-toi-pham-qua-dinh-fan-toan-nghi-toi-la-hung-thu-that"
-  },
-  "shipper-van-nang-ca-hat-dinh-cao-cau-ca-sieu-hang-ky-nang-gi-toi-cung-biet": {
-    "title": "Shipper Vạn Năng: Ca Hát Đỉnh Cao, Câu Cá Siêu Hạng, Kỹ Năng Gì Tôi Cũng Biết!",
-    "folder_slug": "shipper-van-nang-ca-hat-dinh-cao-cau-ca-sieu-hang-ky-nang-gi-toi-cung-biet"
-  },
-  "muoi-nam-trong-vien-tam-than-toi-vua-ra-ngoai-da-vo-dich": {
-    "title": "MƯỜI NĂM TRONG VIỆN TÂM THẦN, TÔI VỪA RA NGOÀI ĐÃ VÔ ĐỊCH",
-    "folder_slug": "muoi-nam-trong-vien-tam-than-toi-vua-ra-ngoai-da-vo-dich"
-  },
-  "chi-muon-ban-hang-rong-nuoi-con-gai-ai-ngo-ca-thanh-pho-deu-phat-dien-vi-mui-mon-an-cua-toi": {
-    "title": "Chỉ Muốn Bán Hàng Rong Nuôi Con Gái, Ai Ngờ Cả Thành Phố Đều Phát Điên Vì Mùi Món Ăn Của Tôi!",
-    "folder_slug": "chi-muon-ban-hang-rong-nuoi-con-gai-ai-ngo-ca-thanh-pho-deu-phat-dien-vi-mui-mon-an-cua-toi"
-  },
-  "tong-mon-cua-ta-chang-co-gi-ngoai-tru-dam-de-tu-quai-vat": {
-    "title": "TÔNG MÔN CỦA TA CHẲNG CÓ GÌ, NGOẠI TRỪ ĐÁM ĐỆ TỬ QUÁI VẬT",
-    "folder_slug": "tong-mon-cua-ta-chang-co-gi-ngoai-tru-dam-de-tu-quai-vat"
   },
   "xuyen-vao-tay-du-ta-tro-thanh-su-huynh-cua-ton-ngo-khong": {
     "title": "XUYÊN VÀO TÂY DU, TA TRỞ THÀNH SƯ HUYNH CỦA TÔN NGỘ KHÔNG",
     "folder_slug": "xuyen-vao-tay-du-ta-tro-thanh-su-huynh-cua-ton-ngo-khong"
   },
-  "dung-doc-cuon-sach-nay-toi-so-ban-nghich-thien-cai-menh": {
-    "title": "ĐỪNG ĐỌC CUỐN SÁCH NÀY, TÔI SỢ BẠN NGHỊCH THIÊN CẢI MỆNH",
-    "folder_slug": "dung-doc-cuon-sach-nay-toi-so-ban-nghich-thien-cai-menh"
+  "ke-bat-nat-bao-toi-khong-hieu-luat-ket-qua-no-nhan-an-tu": {
+    "title": "KẺ BẮT NẠT BẢO TÔI KHÔNG HIỂU LUẬT, KẾT QUẢ NÓ NHẬN ÁN TỬ",
+    "folder_slug": "ke-bat-nat-bao-toi-khong-hieu-luat-ket-qua-no-nhan-an-tu"
   },
-  "that-nghiep-di-giao-do-an-ai-ngo-thanh-dai-cao-thu-phan-phai": {
-    "title": "THẤT NGHIỆP ĐI GIAO ĐỒ ĂN, AI NGỜ THÀNH ĐẠI CAO THỦ PHẢN PHÁI",
-    "folder_slug": "that-nghiep-di-giao-do-an-ai-ngo-thanh-dai-cao-thu-phan-phai"
-  },
-  "tro-lai-nam-2007-toi-tu-hoc-sinh-doi-so-den-ty-phu-hang-dau": {
-    "title": "TRỞ LẠI NĂM 2007, TÔI TỪ HỌC SINH ĐỘI SỔ ĐẾN TỶ PHÚ HÀNG ĐẦU",
-    "folder_slug": "tro-lai-nam-2007-toi-tu-hoc-sinh-doi-so-den-ty-phu-hang-dau"
+  "thoi-dai-chu-than-ket-thuc-ta-mot-minh-duc-lai-tien-dao": {
+    "title": "THỜI ĐẠI CHƯ THẦN KẾT THÚC, TA MỘT MÌNH ĐÚC LẠI TIÊN ĐẠO",
+    "folder_slug": "thoi-dai-chu-than-ket-thuc-ta-mot-minh-duc-lai-tien-dao"
   },
   "toan-dan-hang-hai-toi-bat-dau-voi-mot-con-u-linh-thuyen": {
     "title": "TOÀN DÂN HÀNG HẢI: TÔI BẮT ĐẦU VỚI MỘT CON U LINH THUYỀN",
     "folder_slug": "toan-dan-hang-hai-toi-bat-dau-voi-mot-con-u-linh-thuyen"
   },
-  "toi-mot-idol-vo-danh-mot-buoc-thanh-dinh-luu-nho-runing-man": {
-    "title": "TÔI MỘT IDOL VÔ DANH MỘT BƯỚC THÀNH ĐỈNH LƯU NHỜ RUNING MAN",
-    "folder_slug": "toi-mot-idol-vo-danh-mot-buoc-thanh-dinh-luu-nho-runing-man"
+  "dung-doc-cuon-sach-nay-toi-so-ban-nghich-thien-cai-menh": {
+    "title": "ĐỪNG ĐỌC CUỐN SÁCH NÀY, TÔI SỢ BẠN NGHỊCH THIÊN CẢI MỆNH",
+    "folder_slug": "dung-doc-cuon-sach-nay-toi-so-ban-nghich-thien-cai-menh"
   },
-  "livestream-ban-ve-xuyen-khong-cac-phu-hao-toan-cau-phat-cuong": {
-    "title": "LIVESTREAM BÁN VÉ XUYÊN KHÔNG, CÁC PHÚ HÀO TOÀN CẦU PHÁT CUỒNG",
-    "folder_slug": "livestream-ban-ve-xuyen-khong-cac-phu-hao-toan-cau-phat-cuong"
+  "tong-mon-cua-ta-chang-co-gi-ngoai-tru-dam-de-tu-quai-vat": {
+    "title": "TÔNG MÔN CỦA TA CHẲNG CÓ GÌ, NGOẠI TRỪ ĐÁM ĐỆ TỬ QUÁI VẬT",
+    "folder_slug": "tong-mon-cua-ta-chang-co-gi-ngoai-tru-dam-de-tu-quai-vat"
   },
-  "tru-than-hoa-ra-la-ke-lua-dao-xuyen-khong-roi-han-phai-dung-thuc-luc-de-cuu-van-danh-tieng": {
-    "title": "Trù Thần Hóa Ra Là Kẻ Lừa Đảo? Xuyên Không Rồi, Tôi Phải Dùng Thực Lực Để Cứu Vãn Danh Tiếng!",
-    "folder_slug": "tru-than-hoa-ra-la-ke-lua-dao-xuyen-khong-roi-toi-phai-dung-thuc-luc-de-cuu-van-danh-tieng"
+  "gia-vo-tan-tat-de-tham-gia-show-idoltoi-tung-buoc-khien-ca-nganh-giai-tri-phat-cuong": {
+    "title": "Giả Vờ Tàn Tật Để Tham Gia Show Idol,Tôi Từng Bước Khiến Cả Ngành Giải Trí Phát Cuồng!",
+    "folder_slug": "gia-vo-tan-tat-de-tham-gia-show-idoltoi-tung-buoc-khien-ca-nganh-giai-tri-phat-cuong"
   },
-  "tung-vi-yeu-ma-mat-tat-ca-cuoi-cung-toi-khien-ca-the-gioi-phai-hat-theo-minh": {
-    "title": "Từng Vì Yêu Mà Mất Tất Cả, Cuối Cùng Tôi Khiến Cả Thế Giới Phải Hát Theo Mình!",
-    "folder_slug": "tung-vi-yeu-ma-mat-tat-ca-cuoi-cung-toi-khien-ca-the-gioi-phai-hat-theo-minh"
+  "nhan-sac-vuot-troi-dien-xuat-than-sau-toi-khien-ca-gioi-giai-tri-dien-dao": {
+    "title": "Nhan Sắc Vượt Trội, Diễn Xuất Thần Sầu: Tôi Khiến Cả Giới Giải Trí Điên Đảo!",
+    "folder_slug": "nhan-sac-vuot-troi-dien-xuat-than-sau-toi-khien-ca-gioi-giai-tri-dien-dao"
   },
-  "demo-game-dom": {
-    "title": "TRÒ CHƠI NÀY CŨNG NUỐT NỔI SAO? XIN CÁC NGƯỜI HOÀN TIỀN ĐI?",
-    "folder_slug": "tro-choi-nay-cung-nuot-noi-sao-xin-cac-nguoi-hoan-tien-di"
-  },
-  "tan-the-giang-xuong-moi-ngay-toi-trieu-hoi-mot-la-bai-huyen-thoai": {
-    "title": "Tận Thế Giáng Xuống: Mỗi Ngày Tôi Triệu Hồi Một Lá Bài Huyền Thoại",
-    "folder_slug": "tan-the-giang-xuong-moi-ngay-toi-trieu-hoi-mot-la-bai-huyen-thoai"
-  },
-  "toi-lai-xe-kiem-tien-tien-tay-khien-ca-showbiz-phat-dien": {
-    "title": "TÔI LÁI XE KIẾM TIỀN, TIỆN TAY KHIẾN CẢ SHOWBIZ PHÁT ĐIÊN",
-    "folder_slug": "toi-lai-xe-kiem-tien-tien-tay-khien-ca-showbiz-phat-dien"
-  },
-  "toi-chi-muon-dong-vai-phan-dien-nao-ngo-lai-tro-thanh-anh-de": {
-    "title": "Tôi Chỉ Muốn Đóng Vai Phản Diện, Nào Ngờ Lại Trở Thành Ảnh Đế!",
-    "folder_slug": "toi-chi-muon-dong-vai-phan-dien-nao-ngo-lai-tro-thanh-anh-de"
-  },
-  "toi-chi-quay-quang-cao-thoi-ai-ngo-thanh-dao-dien-huyen-thoai": {
-    "title": "TÔI CHỈ QUAY QUẢNG CÁO THÔI, AI NGỜ THÀNH ĐẠO DIỄN HUYỀN THOẠI",
-    "folder_slug": "toi-chi-quay-quang-cao-thoi-ai-ngo-thanh-dao-dien-huyen-thoai"
-  },
-  "dao-dien-thien-tai-moi-bo-phim-toi-lam-ra-deu-khien-ca-mang-phat-cuong": {
-    "title": "Đạo Diễn Thiên Tài: Mỗi Bộ Phim Tôi Làm Ra Đều Khiến Cả Mạng Phát Cuồng!",
-    "folder_slug": "dao-dien-thien-tai-moi-bo-phim-toi-lam-ra-deu-khien-ca-mang-phat-cuong"
-  },
-  "toi-chi-biet-hoi-nhieu-ky-nang-sinh-ton-thoi-sao-lai-thanh-dai-lao": {
-    "title": "TÔI CHỈ BIẾT HƠI NHIỀU KỸ NĂNG SINH TỒN THÔI, SAO LẠI THÀNH ĐẠI LÃO",
-    "folder_slug": "toi-chi-biet-hoi-nhieu-ky-nang-sinh-ton-thoi-sao-lai-thanh-dai-lao"
-  },
-  "sau-bo-dong-phuc-canh-sat-la-mot-chien-than-vo-dich": {
-    "title": "SAU BỘ ĐỒNG PHỤC CẢNH SÁT LÀ MỘT CHIẾN THẦN VÔ ĐỊCH",
-    "folder_slug": "sau-bo-dong-phuc-canh-sat-la-mot-chien-than-vo-dich"
-  },
-  "ket-doi-voi-nu-than-de-kich-hoat-he-thong-toi-vo-tinh-thanh-thien-vuong-giai-tri": {
-    "title": "Kết Đôi Với Nữ Thần Để Kích Hoạt Hệ Thống, Tôi Vô Tình Thành Thiên Vương Giải Trí",
-    "folder_slug": "ket-doi-voi-nu-than-de-kich-hoat-he-thong-toi-vo-tinh-thanh-thien-vuong-giai-tri"
-  },
-  "mo-phong-toi-pham-muoi-van-lan-toi-tro-thanh-than-tham-so-mot": {
-    "title": "MÔ PHỎNG TỘI PHẠM MƯỜI VẠN LẦN, TÔI TRỞ THÀNH THẦN THÁM SỐ MỘT",
-    "folder_slug": "mo-phong-toi-pham-muoi-van-lan-toi-tro-thanh-than-tham-so-mot"
-  },
-  "bi-phong-sat-toan-mang-toi-dung-am-nhac-tai-chan-dinh-luu": {
-    "title": "Bị Phong Sát Toàn Mạng, Tôi Dùng Âm Nhạc Tái Chấn Đỉnh Lưu",
-    "folder_slug": "bi-phong-sat-toan-mang-toi-dung-am-nhac-tai-chan-dinh-luu"
+  "shipper-van-nang-ca-hat-dinh-cao-cau-ca-sieu-hang-ky-nang-gi-toi-cung-biet": {
+    "title": "Shipper Vạn Năng: Ca Hát Đỉnh Cao, Câu Cá Siêu Hạng, Kỹ Năng Gì Tôi Cũng Biết!",
+    "folder_slug": "shipper-van-nang-ca-hat-dinh-cao-cau-ca-sieu-hang-ky-nang-gi-toi-cung-biet"
   },
   "nguoi-dang-hoang-ai-lai-di-lam-streamer-tru-khi-co-he-thong": {
     "title": "NGƯỜI ĐÀNG HOÀNG AI LẠI ĐI LÀM STREAMER, TRỪ KHI CÓ HỆ THỐNG",
     "folder_slug": "nguoi-dang-hoang-ai-lai-di-lam-streamer-tru-khi-co-he-thong"
   },
-  "bi-he-thong-ep-di-nhap-ngu-toi-lai-tro-thanh-than-chien-tranh-manh-nhat": {
-    "title": "Bị Hệ Thống Ép Đi Nhập Ngũ, Tôi Lại Trở Thành Thần Chiến Tranh Mạnh Nhất!",
-    "folder_slug": "bi-he-thong-ep-di-nhap-ngu-toi-lai-tro-thanh-than-chien-tranh-manh-nhat"
-  },
-  "khoi-dau-voi-mot-bai-hat-ve-nguoi-cha-toi-khien-ca-mang-dong-loat-roi-le": {
-    "title": "Khởi Đầu Với Một Bài Hát Về Người Cha, Tôi Khiến Cả Mạng Đồng Loạt Rơi Lệ!",
-    "folder_slug": "khoi-dau-voi-mot-bai-hat-ve-nguoi-cha-toi-khien-ca-mang-dong-loat-roi-le"
-  },
-  "livestream-hat-rong-toi-khien-ca-lam-tinh-phat-dien-chi-bang-nhac-cu-dia-cau": {
-    "title": "Livestream Hát Rong: Tôi Khiến Cả Lam Tinh Phát Điên Chỉ Bằng Nhạc Cũ Địa Cầu!",
-    "folder_slug": "livestream-hat-rong-toi-khien-ca-lam-tinh-phat-dien-chi-bang-nhac-cu-dia-cau"
-  },
-  "co-vo-minh-tinh-muon-huy-hoai-toi-nao-ngo-toi-noi-tieng-hon-co-ay": {
-    "title": "VỢ CŨ MINH TINH MUỐN HỦY HOẠI TÔI NÀO NGỜ TÔI NỔI TIẾNG HƠN CÔ ẤY",
-    "folder_slug": "vo-cu-minh-tinh-muon-huy-hoai-toi-nao-ngo-toi-noi-tieng-hon-co-ay"
-  },
-  "toi-chi-muon-lam-streamer-nao-ngo-moi-ngay-deu-lap-dai-cong": {
-    "title": "TÔI CHỈ MUỐN LÀM STREAMER NÀO NGỜ MỖI NGÀY ĐỀU LẬP ĐẠI CÔNG",
-    "folder_slug": "toi-chi-muon-lam-streamer-nao-ngo-moi-ngay-deu-lap-dai-cong"
-  },
-  "trong-sinh-trong-gioi-giai-tri-dung-noi-chuyen-tinh-cam-voi-toi": {
-    "title": "TRỌNG SINH TRONG GIỚI GIẢI TRÍ: ĐỪNG NÓI CHUYỆN TÌNH CẢM VỚI TÔI",
-    "folder_slug": "trong-sinh-trong-gioi-giai-tri-dung-noi-chuyen-tinh-cam-voi-toi"
-  },
-  "trung-sinh-gioi-giai-tri-toi-chi-muon-kin-tieng-lam-nguoi-dung-sau": {
-    "title": "TRÙNG SINH GIỚI GIẢI TRÍ: TÔI CHỈ MUỐN KÍN TIẾNG LÀM NGƯỜI ĐỨNG SAU",
-    "folder_slug": "trung-sinh-gioi-giai-tri-toi-chi-muon-kin-tieng-lam-nguoi-dung-sau"
+  "muoi-nam-trong-vien-tam-than-toi-vua-ra-ngoai-da-vo-dich": {
+    "title": "MƯỜI NĂM TRONG VIỆN TÂM THẦN, TÔI VỪA RA NGOÀI ĐÃ VÔ ĐỊCH",
+    "folder_slug": "muoi-nam-trong-vien-tam-than-toi-vua-ra-ngoai-da-vo-dich"
   },
   "an-minh-suot-nhieu-nam-den-khi-mot-ca-khuc-ra-doi-ca-showbiz-moi-biet-toi-la-ai": {
     "title": "Ẩn Mình Suốt Nhiều Năm, Đến Khi Một Ca Khúc Ra Đời Cả Showbiz Mới Biết Tôi Là Ai",
     "folder_slug": "an-minh-suot-nhieu-nam-den-khi-mot-ca-khuc-ra-doi-ca-showbiz-moi-biet-toi-la-ai"
   },
-  "kiep-truoc-la-ca-si-vo-danh-kiep-nay-toi-hat-mot-bai-khien-ca-mang-phat-khoc": {
-    "title": "Kiếp Trước Là Ca Sĩ Vô Danh, Kiếp Này Tôi Hát Một Bài Khiến Cả Mạng Phát Khóc!",
-    "folder_slug": "kiep-truoc-la-ca-si-vo-danh-kiep-nay-toi-hat-mot-bai-khien-ca-mang-phat-khoc"
-  },
-  "duoc-tra-tien-de-chui-the-tren-show-toi-cang-chui-cang-kiem-duoc-nhieu": {
-    "title": "Được Trả Tiền Để Chửi Thề Trên Show?! Tôi Càng Chửi, Càng Kiếm Được Nhiều!",
-    "folder_slug": "duoc-tra-tien-de-chui-the-tren-show-toi-cang-chui-cang-kiem-duoc-nhieu"
-  },
-  "tu-show-hen-ho-bien-thanh-cuoc-tham-hiem-toi-va-nu-than-kham-pha-lang-mo-co": {
-    "title": "Từ Show Hẹn Hò Biến Thành Cuộc Thám Hiểm, Tôi Và Nữ Thần Khám Phá Lăng Mộ Cổ",
-    "folder_slug": "tu-show-hen-ho-bien-thanh-cuoc-tham-hiem-toi-va-nu-than-kham-pha-lang-mo-co"
-  },
-  "sinh-ton-noi-hoang-da-toi-dua-vao-he-thong-song-nhu-di-nghi-duong": {
-    "title": "Sinh Tồn Nơi Hoang Dã: Tôi Dựa Vào Hệ Thống Sống Như Đi Nghỉ Dưỡng",
-    "folder_slug": "sinh-ton-noi-hoang-da-toi-dua-vao-he-thong-song-nhu-di-nghi-duong"
-  },
-  "than-hao-co-phieu-tu-ke-trang-tay-tro-thanh-ong-trum-tai-chinh": {
-    "title": "THẦN HÀO CỔ PHIẾU: TỪ KẺ TRẮNG TAY TRỞ THÀNH ÔNG TRÙM TÀI CHÍNH",
-    "folder_slug": "than-hao-co-phieu-tu-ke-trang-tay-tro-thanh-ong-trum-tai-chinh"
-  },
-  "dao-dien-tai-tieng-nhat-showbiz-bi-chui-khong-co-tam-nhung-moi-bo-phim-lai-gay-bao-du-luan": {
-    "title": "ĐẠO DIỄN TAI TIẾNG NHẤT SHOWBIZ: BỊ CHỬI KHÔNG CÓ TẦM NHƯNG MỖI BỘ PHIM LẠI GÂY BÃO DƯ LUẬN",
-    "folder_slug": "dao-dien-tai-tieng-nhat-showbiz-bi-chui-khong-co-tam-nhung-moi-bo-phim-lai-gay-bao-du-luan"
-  },
-  "ong-vua-an-bam-so-1-gioi-giai-tri-chong-hop-dong-cua-thien-hau": {
-    "title": "ÔNG VUA ĂN BÁM SỐ 1 GIỚI GIẢI TRÍ: CHỒNG HỢP ĐỒNG CỦA THIÊN HẬU",
-    "folder_slug": "ong-vua-an-bam-so-1-gioi-giai-tri-chong-hop-dong-cua-thien-hau"
-  },
-  "tham-hoa-ngay-tan-the-toi-dan-doi-di-cuu-the-nhung-ca-the-gioi-lai-muon-chung-toi-giai-tan": {
-    "title": "Thảm Họa Ngày Tận Thế: Tôi Dẫn Đội Đi “Cứu Thế” Nhưng Cả Thế Giới Lại Muốn Chúng Tôi Giải Tán!",
-    "folder_slug": "tham-hoa-ngay-tan-the-toi-dan-doi-di-cuu-the-nhung-ca-the-gioi-lai-muon-chung-toi-giai-tan"
-  },
-  "ten-trom-hang-f-xin-loi-toi-co-the-an-cap-bat-cu-thu-gi": {
-    "title": "Tên Trộm Hạng F? Xin Lỗi, Tôi Có Thể Ăn Cắp Bất Cứ Thứ Gì!",
-    "folder_slug": "ten-trom-hang-f-xin-loi-toi-co-the-an-cap-bat-cu-thu-gi"
-  },
-  "dien-vai-xa-hoi-den-qua-giong-toi-bi-toan-quoc-xem-la-toi-pham": {
-    "title": "Diễn Vai Xã Hội Đen Quá Giống, Tôi Bị Toàn Quốc Xem Là Tội Phạm",
-    "folder_slug": "dien-vai-xa-hoi-den-qua-giong-toi-bi-toan-quoc-xem-la-toi-pham"
-  },
-  "quay-ban-hang-rong-cua-toi-khien-thuc-khach-them-phat-khoc": {
-    "title": "QUẦY BÁN HÀNG RONG CỦA TÔI KHIẾN THỰC KHÁCH THÈM PHÁT KHÓC",
-    "folder_slug": "quay-ban-hang-rong-cua-toi-khien-thuc-khach-them-phat-khoc"
-  },
-  "thuc-tinh-he-thong-tim-vang-tu-ke-an-bam-toi-tro-thanh-dai-gia-giau-nhat-vung": {
-    "title": "Thức Tỉnh Hệ Thống Tìm Vàng, Từ Kẻ Ăn Bám Tôi Trở Thành Đại Gia Giàu Nhất Vùng!",
-    "folder_slug": "thuc-tinh-he-thong-tim-vang-tu-ke-an-bam-toi-tro-thanh-dai-gia-giau-nhat-vung"
-  },
-  "con-duong-noi-tieng-cua-toi-khoi-dau-bang-mot-cuoc-goi-bao-an": {
-    "title": "CON ĐƯỜNG NỔI TIẾNG CỦA TÔI KHỞI ĐẦU BĂNG MỘT CUỘC GỌI BÁO ÁN",
-    "folder_slug": "con-duong-noi-tieng-cua-toi-khoi-dau-bang-mot-cuoc-goi-bao-an"
-  },
-  "toi-khong-den-de-bao-thu-toi-den-de-thiet-lap-lai-luat-choi-cua-gioi-giai-tri": {
-    "title": "Tôi Không Đến Để Báo Thù, Tôi Đến Để Thiết Lập Lại Luật Chơi Của Giới Giải Trí!",
-    "folder_slug": "toi-khong-den-de-bao-thu-toi-den-de-thiet-lap-lai-luat-choi-cua-gioi-giai-tri"
+  "toi-lai-xe-kiem-tien-tien-tay-khien-ca-showbiz-phat-dien": {
+    "title": "TÔI LÁI XE KIẾM TIỀN, TIỆN TAY KHIẾN CẢ SHOWBIZ PHÁT ĐIÊN",
+    "folder_slug": "toi-lai-xe-kiem-tien-tien-tay-khien-ca-showbiz-phat-dien"
   },
   "toi-chi-viet-mot-vo-hai-sao-ca-mang-lai-khoc-tham-the-nay": {
     "title": "Tôi Chỉ Viết Một Vở Hài, Sao Cả Mạng Lại Khóc Thảm Thế Này?",
     "folder_slug": "toi-chi-viet-mot-vo-hai-sao-ca-mang-lai-khoc-tham-the-nay"
   },
-  "mot-tiem-kim-khi-nho-nhung-khien-gioi-chuyen-gia-phai-cuoi-dau": {
-    "title": "MỘT TIỆM KIM KHÍ NHỎ NHƯNG KHIẾN GIỚI CHUYÊN GIA PHẢI CUỐI ĐẦU!",
-    "folder_slug": "mot-tiem-kim-khi-nho-nhung-khien-gioi-chuyen-gia-phai-cuoi-dau"
-  },
-  "thanh-tau-hai-show-hen-ho-dinh-luu-tieu-hoa-bi-toi-choc-cho-dung-hinh": {
-    "title": "Thánh Tấu Hài Show Hẹn Hò, Đỉnh Lưu Tiểu Hoa Bị Tôi Chọc Cho Đứng Hình",
-    "folder_slug": "thanh-tau-hai-show-hen-ho-dinh-luu-tieu-hoa-bi-toi-choc-cho-dung-hinh"
-  },
-  "sao-khi-sap-phong-ca-gioi-giai-tri-bi-toi-choc-tuc-dien": {
-    "title": "SAO KHI SẬP PHÒNG CẢ GIỚI GIẢI TRÍ BỊ TÔI CHỌC TỨC ĐIÊN",
-    "folder_slug": "sao-khi-sap-phong-ca-gioi-giai-tri-bi-toi-choc-tuc-dien"
-  },
-  "livestream-hoang-dao-toi-xay-thien-duong-giua-bien-khoi": {
-    "title": "LIVESTREAM HOANG ĐẢO: TÔI XÂY THIÊN ĐƯỜNG GIỮA BIỂN KHƠI",
-    "folder_slug": "livestream-hoang-dao-toi-xay-thien-duong-giua-bien-khoi"
-  },
-  "mot-bai-hat-toi-cuu-mot-bo-phim-mot-khuc-nhac-toi-cuu-mot-mang-nguoi": {
-    "title": "Một Bài Hát Tôi Cứu Một Bộ Phim, Một Khúc Nhạc Tôi Cứu Một Mạng Người!",
-    "folder_slug": "mot-bai-hat-toi-cuu-mot-bo-phim-mot-khuc-nhac-toi-cuu-mot-mang-nguoi"
-  },
-  "mot-nguoi-thong-tri-ca-gioi-giai-tri-kiet-tac-va-tham-hoa-deu-do-toi-tao-ra": {
-    "title": "Một Người Thống Trị Cả Giới Giải Trí: Kiệt Tác Và Thảm Họa Đều Do Tôi Tạo Ra",
-    "folder_slug": "mot-nguoi-thong-tri-ca-gioi-giai-tri-kiet-tac-va-tham-hoa-deu-do-toi-tao-ra"
-  },
-  "he-thong-coi-am-tham-gia-show-nghe-nghiep-ta-khien-dao-dien-muon-khoc": {
-    "title": "Hệ Thống Cõi Âm: Tham Gia Show Nghề Nghiệp, Ta Khiến Đạo Diễn Muốn Khóc",
-    "folder_slug": "he-thong-coi-am-tham-gia-show-nghe-nghiep-ta-khien-dao-dien-muon-khoc"
-  },
-  "di-cau-gio-trong-show-hen-ho-nao-ngo-hot-nhat-toan-mang": {
-    "title": "ĐI CÂU GIỜ TRONG SHOW HẸN HÒ NÀO NGỜ HÓT NHẤT TOÀN MẠNG",
-    "folder_slug": "di-cau-gio-trong-show-hen-ho-nao-ngo-hot-nhat-toan-mang"
-  },
-  "he-thong-bat-toi-ban-hang-gia-nhung-toan-ship-nham-hang-xin": {
-    "title": "Hệ Thống Bắt Tôi Bán Hàng Giả, Nhưng Toàn Ship Nhầm Hàng Xịn!",
-    "folder_slug": "he-thong-bat-toi-ban-hang-gia-nhung-toan-ship-nham-hang-xin"
-  },
-  "livestream-lam-do-thu-cong-toi-bi-cong-an-moi-uong-tra": {
-    "title": "LIVESTREAM LÀM ĐỒ THỦ CÔNG TÔI BỊ CÔNG AN MỜI UỐNG TRÀ",
-    "folder_slug": "livestream-lam-do-thu-cong-toi-bi-cong-an-moi-uong-tra"
-  },
-  "he-thong-ong-cau-max-cap-boi-duong-muoi-sau-thien-tai": {
-    "title": "HỆ THỐNG ÔNG CẬU MAX CẤP: BỒI DƯỠNG MƯỜI SÁU THIÊN TÀI",
-    "folder_slug": "he-thong-ong-cau-max-cap-boi-duong-muoi-sau-thien-tai"
-  },
-  "bac-si-san-khoa-dinh-cap-toi-phat-hien-cha-dua-be-khong-phai-chong-co-ay": {
-    "title": "BÁC SĨ SẢN KHOA ĐỈNH CẤP: TÔI PHÁT HIỆN CHA ĐỨA BÉ KHÔNG PHẢI CHỒNG CÔ ẤY",
-    "folder_slug": "bac-si-san-khoa-dinh-cap-toi-phat-hien-cha-dua-be-khong-phai-chong-co-ay"
-  },
-  "shipper-giao-do-an-khong-toi-chuyen-giao-toi-pham-cho-canh-sat": {
-    "title": "SHIPPER GIAO ĐỒ ĂN? KHÔNG, TÔI CHUYÊN GIAO TỘI PHẠM CHO CẢNH SÁT",
-    "folder_slug": "shipper-giao-do-an-khong-toi-chuyen-giao-toi-pham-cho-canh-sat"
-  },
-  "he-thong-livestream-bao-tien-dai-ca-oi-nap-them-chut-nua-di": {
-    "title": "HỆ THỐNG LIVESTREAM BÀO TIỀN: ĐẠI CA ƠI NẠP THÊM CHÚT NỮA ĐI",
-    "folder_slug": "he-thong-livestream-bao-tien-dai-ca-oi-nap-them-chut-nua-di"
-  },
-  "runnung-man-toi-chi-tau-hai-sao-lai-thanh-nguoi-giau-nhat-the-gioi": {
-    "title": "RUNNUNG MAN: TÔI CHỈ TẤU HÀI, SAO LẠI THÀNH NGƯỜI GIÀU NHẤT THẾ GIỚI?",
-    "folder_slug": "runnung-man-toi-chi-tau-hai-sao-lai-thanh-nguoi-giau-nhat-the-gioi"
+  "ca-gioi-giai-tri-khong-ai-ngo-ong-chu-dung-sau-hang-loat-minh-tinh-lai-la-toi": {
+    "title": "Cả Giới Giải Trí Không Ai Ngờ, Ông Chủ Đứng Sau Hàng Loạt Minh Tinh Lại Là Tôi",
+    "folder_slug": "ca-gioi-giai-tri-khong-ai-ngo-ong-chu-dung-sau-hang-loat-minh-tinh-lai-la-toi"
   },
   "toan-mang-chui-toi-la-tieu-tam-nao-ngo-dinh-luu-lai-la-ban-trai-toi": {
     "title": "Toàn Mạng Chửi Tôi Là Tiểu Tam, Nào Ngờ Đỉnh Lưu Lại Là Bạn Trai Tôi",
     "folder_slug": "toan-mang-chui-toi-la-tieu-tam-nao-ngo-dinh-luu-lai-la-ban-trai-toi"
   },
-  "su-hoi-sinh-cua-than-y-kho-tinh-bat-dau-tu-cuoc-bao-thu-dam-mau": {
-    "title": "Sự Hồi Sinh Của Thần Y Khó Tính – Bắt Đầu Từ Cuộc Báo Thù Đẫm Máu!",
-    "folder_slug": "su-hoi-sinh-cua-than-y-kho-tinh-bat-dau-tu-cuoc-bao-thu-dam-mau"
+  "toi-chi-biet-hoi-nhieu-ky-nang-sinh-ton-thoi-sao-lai-thanh-dai-lao": {
+    "title": "TÔI CHỈ BIẾT HƠI NHIỀU KỸ NĂNG SINH TỒN THÔI, SAO LẠI THÀNH ĐẠI LÃO",
+    "folder_slug": "toi-chi-biet-hoi-nhieu-ky-nang-sinh-ton-thoi-sao-lai-thanh-dai-lao"
   },
-  "thap-nien-70-nguoi-dan-ong-lanh-lung-nhat-quan-khu-cuoi-cung-cung-quy-xuong-vi-vo": {
-    "title": "Thập Niên 70: Người Đàn Ông Lạnh Lùng Nhất Quân Khu Cuối Cùng Cũng Quỳ Xuống Vì Vợ!",
-    "folder_slug": "thap-nien-70-nguoi-dan-ong-lanh-lung-nhat-quan-khu-cuoi-cung-cung-quy-xuong-vi-vo"
+  "livestream-ban-ve-xuyen-khong-cac-phu-hao-toan-cau-phat-cuong": {
+    "title": "LIVESTREAM BÁN VÉ XUYÊN KHÔNG, CÁC PHÚ HÀO TOÀN CẦU PHÁT CUỒNG",
+    "folder_slug": "livestream-ban-ve-xuyen-khong-cac-phu-hao-toan-cau-phat-cuong"
   },
-  "toi-bi-mot-nu-sinh-bat-nat-o-truong-cuop-mat-tien-vay-ma-he-thong-lai-muon-toi-thu-nhan-tinh-cam-cua-minh-voi-co-ta": {
-    "title": "Tôi Bị Một Nữ Sinh Bắt Nạt Ở Trường Cướp Mất Tiền, Vậy Mà Hệ Thống Lại Muốn Tôi Thú Nhận Tình Cảm Của Mình Với Cô Ta?",
-    "folder_slug": "toi-bi-mot-nu-sinh-bat-nat-o-truong-cuop-mat-tien-vay-ma-he-thong-lai-muon-toi-thu-nhan-tinh-cam-cua-minh-voi-co-ta"
+  "tham-hoa-ngay-tan-the-toi-dan-doi-di-cuu-the-nhung-ca-the-gioi-lai-muon-chung-toi-giai-tan": {
+    "title": "Thảm Họa Ngày Tận Thế: Tôi Dẫn Đội Đi “Cứu Thế” Nhưng Cả Thế Giới Lại Muốn Chúng Tôi Giải Tán!",
+    "folder_slug": "tham-hoa-ngay-tan-the-toi-dan-doi-di-cuu-the-nhung-ca-the-gioi-lai-muon-chung-toi-giai-tan"
   },
-  "tu-bac-si-thuc-tap-den-than-y-toi-so-huu-he-thong-mo-phong-kiep-song": {
-    "title": "Từ Bác Sĩ Thực Tập Đến Thần Y: Tôi Sở Hữu Hệ Thống Mô Phỏng Kiếp Sống!",
-    "folder_slug": "tu-bac-si-thuc-tap-den-than-y-toi-so-huu-he-thong-mo-phong-kiep-song"
+  "tan-the-giang-xuong-moi-ngay-toi-trieu-hoi-mot-la-bai-huyen-thoai": {
+    "title": "Tận Thế Giáng Xuống: Mỗi Ngày Tôi Triệu Hồi Một Lá Bài Huyền Thoại",
+    "folder_slug": "tan-the-giang-xuong-moi-ngay-toi-trieu-hoi-mot-la-bai-huyen-thoai"
+  },
+  "toi-chi-la-dien-vien-sao-ai-cung-nghi-toi-la-toi-pham": {
+    "title": "TÔI CHỈ LÀ DIỄN VIÊN, SAO AI CŨNG NGHĨ TÔI LÀ TỘI PHẠM",
+    "folder_slug": "toi-chi-la-dien-vien-sao-ai-cung-nghi-toi-la-toi-pham"
+  },
+  "sau-bo-dong-phuc-canh-sat-la-mot-chien-than-vo-dich": {
+    "title": "SAU BỘ ĐỒNG PHỤC CẢNH SÁT LÀ MỘT CHIẾN THẦN VÔ ĐỊCH",
+    "folder_slug": "sau-bo-dong-phuc-canh-sat-la-mot-chien-than-vo-dich"
+  },
+  "tu-tieu-thit-tuoi-yeu-duoi-den-vua-sinh-ton-toi-khien-ca-show-truyen-hinh-chan-dong": {
+    "title": "Từ Tiểu Thịt Tươi Yếu Đuối Đến Vua Sinh Tồn: Tôi Khiến Cả Show Truyền Hình Chấn Động",
+    "folder_slug": "tu-tieu-thit-tuoi-yeu-duoi-den-vua-sinh-ton-toi-khien-ca-show-truyen-hinh-chan-dong"
+  },
+  "thanh-tau-hai-show-hen-ho-dinh-luu-tieu-hoa-bi-toi-choc-cho-dung-hinh": {
+    "title": "Thánh Tấu Hài Show Hẹn Hò, Đỉnh Lưu Tiểu Hoa Bị Tôi Chọc Cho Đứng Hình",
+    "folder_slug": "thanh-tau-hai-show-hen-ho-dinh-luu-tieu-hoa-bi-toi-choc-cho-dung-hinh"
+  },
+  "mot-nguoi-vo-so-than-phan-can-quet-toan-bo-gioi-giai-tri": {
+    "title": "MỘT NGƯỜI VÔ SỐ THÂN PHẬN CÀN QUÉT TOÀN BỘ GIỚI GIẢI TRÍ",
+    "folder_slug": "mot-nguoi-vo-so-than-phan-can-quet-toan-bo-gioi-giai-tri"
+  },
+  "tro-lai-nam-2007-toi-tu-hoc-sinh-doi-so-den-ty-phu-hang-dau": {
+    "title": "TRỞ LẠI NĂM 2007, TÔI TỪ HỌC SINH ĐỘI SỔ ĐẾN TỶ PHÚ HÀNG ĐẦU",
+    "folder_slug": "tro-lai-nam-2007-toi-tu-hoc-sinh-doi-so-den-ty-phu-hang-dau"
+  },
+  "runnung-man-toi-chi-tau-hai-sao-lai-thanh-nguoi-giau-nhat-the-gioi": {
+    "title": "RUNNUNG MAN: TÔI CHỈ TẤU HÀI, SAO LẠI THÀNH NGƯỜI GIÀU NHẤT THẾ GIỚI?",
+    "folder_slug": "runnung-man-toi-chi-tau-hai-sao-lai-thanh-nguoi-giau-nhat-the-gioi"
+  },
+  "dao-dien-thien-tai-moi-bo-phim-toi-lam-ra-deu-khien-ca-mang-phat-cuong": {
+    "title": "Đạo Diễn Thiên Tài: Mỗi Bộ Phim Tôi Làm Ra Đều Khiến Cả Mạng Phát Cuồng!",
+    "folder_slug": "dao-dien-thien-tai-moi-bo-phim-toi-lam-ra-deu-khien-ca-mang-phat-cuong"
+  },
+  "kiep-truoc-la-ca-si-vo-danh-kiep-nay-toi-hat-mot-bai-khien-ca-mang-phat-khoc": {
+    "title": "Kiếp Trước Là Ca Sĩ Vô Danh, Kiếp Này Tôi Hát Một Bài Khiến Cả Mạng Phát Khóc!",
+    "folder_slug": "kiep-truoc-la-ca-si-vo-danh-kiep-nay-toi-hat-mot-bai-khien-ca-mang-phat-khoc"
+  },
+  "toi-chi-quay-quang-cao-thoi-ai-ngo-thanh-dao-dien-huyen-thoai": {
+    "title": "TÔI CHỈ QUAY QUẢNG CÁO THÔI, AI NGỜ THÀNH ĐẠO DIỄN HUYỀN THOẠI",
+    "folder_slug": "toi-chi-quay-quang-cao-thoi-ai-ngo-thanh-dao-dien-huyen-thoai"
   },
   "luat-su-cuong-do-dong-vao-con-gai-toi-dung-mong-thoat-toi": {
     "title": "LUẬT SƯ CUỒNG ĐỒ: ĐỘNG VÀO CON GÁI TÔI, ĐỪNG MONG THOÁT TỘI",
     "folder_slug": "luat-su-cuong-do-dong-vao-con-gai-toi-dung-mong-thoat-toi"
   },
-  "toan-cau-thuc-tinh-ky-nang-rac-cua-toi-deu-tien-hoa-thanh-cap-than": {
-    "title": "Toàn Cầu Thức Tỉnh: Kỹ Năng Rác Của Tôi Đều Tiến Hóa Thành Cấp Thần!",
-    "folder_slug": "toan-cau-thuc-tinh-ky-nang-rac-cua-toi-deu-tien-hoa-thanh-cap-than"
+  "that-nghiep-di-giao-do-an-ai-ngo-thanh-dai-cao-thu-phan-phai": {
+    "title": "THẤT NGHIỆP ĐI GIAO ĐỒ ĂN, AI NGỜ THÀNH ĐẠI CAO THỦ PHẢN PHÁI",
+    "folder_slug": "that-nghiep-di-giao-do-an-ai-ngo-thanh-dai-cao-thu-phan-phai"
   },
-  "toi-chi-con-3-thang-de-song-nhung-lai-tro-thanh-ngoi-sao-khien-ca-mang-phat-dien": {
-    "title": "Tôi Chỉ Còn 3 Tháng Để Sống, Nhưng Lại Trở Thành Ngôi Sao Khiến Cả Mạng Phát Điên",
-    "folder_slug": "toi-chi-con-3-thang-de-song-nhung-lai-tro-thanh-ngoi-sao-khien-ca-mang-phat-dien"
+  "duoc-tra-tien-de-chui-the-tren-show-toi-cang-chui-cang-kiem-duoc-nhieu": {
+    "title": "Được Trả Tiền Để Chửi Thề Trên Show?! Tôi Càng Chửi, Càng Kiếm Được Nhiều!",
+    "folder_slug": "duoc-tra-tien-de-chui-the-tren-show-toi-cang-chui-cang-kiem-duoc-nhieu"
   },
-  "ve-que-lam-heo-an-tet-khong-ngo-noi-tieng-toan-mang": {
-    "title": "VỀ QUÊ LÀM HEO ĂN TẾT KHÔNG NGỜ NỖI TIẾNG TOÀN MẠNG",
-    "folder_slug": "ve-que-lam-heo-an-tet-khong-ngo-noi-tieng-toan-mang"
+  "tiep-quan-cong-ty-game-pha-san-toi-quyet-dinh-lam-mot-tua-game-khien-ca-mang-noi-dien": {
+    "title": "Tiếp Quản Công Ty Game Phá Sản, Tôi Quyết Định Làm Một Tựa Game Khiến Cả Mạng Nổi Điên",
+    "folder_slug": "tiep-quan-cong-ty-game-pha-san-toi-quyet-dinh-lam-mot-tua-game-khien-ca-mang-noi-dien"
   },
-  "xuyen-khong-lam-shipper-so-nho-toi-cang-bi-khieu-nai-cang-pha-duoc-nhieu-vu-an": {
-    "title": "Xuyên Không Làm Shipper Số Nhọ , Tôi Càng Bị Khiếu Nại Càng Phá Được Nhiều Vụ Án!",
-    "folder_slug": "xuyen-khong-lam-shipper-so-nho-toi-cang-bi-khieu-nai-cang-pha-duoc-nhieu-vu-an"
+  "he-thong-livestream-bao-tien-dai-ca-oi-nap-them-chut-nua-di": {
+    "title": "HỆ THỐNG LIVESTREAM BÀO TIỀN: ĐẠI CA ƠI NẠP THÊM CHÚT NỮA ĐI",
+    "folder_slug": "he-thong-livestream-bao-tien-dai-ca-oi-nap-them-chut-nua-di"
   },
-  "tu-dinh-luu-ngheo-nhat-showbiz-toi-dua-vao-lam-tu-thien-ma-phong-than": {
-    "title": "Từ Đỉnh Lưu Nghèo Nhất Showbiz, Tôi Dựa Vào Làm Từ Thiện Mà Phong Thần!",
-    "folder_slug": "tu-dinh-luu-ngheo-nhat-showbiz-toi-dua-vao-lam-tu-thien-ma-phong-than"
+  "mo-phong-toi-pham-muoi-van-lan-toi-tro-thanh-than-tham-so-mot": {
+    "title": "MÔ PHỎNG TỘI PHẠM MƯỜI VẠN LẦN, TÔI TRỞ THÀNH THẦN THÁM SỐ MỘT",
+    "folder_slug": "mo-phong-toi-pham-muoi-van-lan-toi-tro-thanh-than-tham-so-mot"
   },
-  "xuyen-khong-gioi-giai-tri-he-thong-bat-toi-lam-tan-thu-hai-nam-ruoi": {
-    "title": "XUYÊN KHÔNG GIỚI GIẢI TRÍ: HỆ THỐNG BẮT TÔI LÀM TÂN THỦ HAI NĂM RƯỠI",
-    "folder_slug": "xuyen-khong-gioi-giai-tri-he-thong-bat-toi-lam-tan-thu-hai-nam-ruoi"
-  },
-  "quay-hang-my-thuc-xuat-hien-ngau-nhien-ca-thanh-pho-phat-cuong-truy-tim-toi": {
-    "title": "Quầy Hàng Mỹ Thực Xuất Hiện Ngẫu Nhiên, Cả Thành Phố Phát Cuồng Truy Tìm Tôi",
-    "folder_slug": "quay-hang-my-thuc-xuat-hien-ngau-nhien-ca-thanh-pho-phat-cuong-truy-tim-toi"
-  },
-  "bat-dau-tu-mot-quay-com-le-duong-toi-khien-ca-mang-them-thuong-den-phat-cuong": {
-    "title": "Bắt Đầu Từ Một Quầy Cơm Lề Đường, Tôi Khiến Cả Mạng Thèm Thuồng Đến Phát Cuồng",
-    "folder_slug": "bat-dau-tu-mot-quay-com-le-duong-toi-khien-ca-mang-them-thuong-den-phat-cuong"
-  },
-  "do-cong-chuc-lien-da-toi-tham-gia-show-hen-ho-toi-noi-ran-ran": {
-    "title": "ĐỖ CÔNG CHỨC LIỀN ĐÁ TÔI? THAM GIA SHOW HẸN HÒ TÔI NỔI RẦN RẦN",
-    "folder_slug": "do-cong-chuc-lien-da-toi-tham-gia-show-hen-ho-toi-noi-ran-ran"
-  },
-  "tan-the-dem-nguoc-toi-duoc-thue-de-cuu-cac-the-gioi-truoc-ngay-diet-vong": {
-    "title": "TẬN THẾ ĐẾM NGƯỢC: TÔI ĐƯỢC THUÊ ĐỂ CỨU CÁC THẾ GIỚI TRƯỚC NGÀY DIỆT VONG",
-    "folder_slug": "tan-the-dem-nguoc-toi-duoc-thue-de-cuu-cac-the-gioi-truoc-ngay-diet-vong"
-  },
-  "sinh-ton-hoang-da-ta-chat-tat-ca-bang-con-dao-bep-bi-gay": {
-    "title": "Sinh Tồn Hoang Dã: Ta Chặt Tất Cả Bằng Con Dao Bếp Bị Gãy!",
-    "folder_slug": "sinh-ton-hoang-da-ta-chat-tat-ca-bang-con-dao-bep-bi-gay"
-  },
-  "len-gameshow-chui-nguoi-con-duoc-tien-toi-ca-khia-ca-gioi-giai-tri": {
-    "title": "LÊN GAMESHOW CHỬI NGƯỜI CÒN ĐƯỢC TIỀN, TÔI CÀ KHỊA CẢ GIỚI GIẢI TRÍ",
-    "folder_slug": "len-gameshow-chui-nguoi-con-duoc-tien-toi-ca-khia-ca-gioi-giai-tri"
-  },
-  "tu-than-tuong-quoc-dan-den-ke-bi-ruong-bo-toi-dung-am-nhac-dap-nat-gioi-tu-ban": {
-    "title": "Từ Thần Tượng Quốc Dân Đến Kẻ Bị Ruồng Bỏ: Tôi Dùng Âm Nhạc Đập Nát Giới Tư Bản!",
-    "folder_slug": "tu-than-tuong-quoc-dan-den-ke-bi-ruong-bo-toi-dung-am-nhac-dap-nat-gioi-tu-ban"
-  },
-  "phat-song-truc-tiep-sinh-ton-nguoi-khac-chet-doi-con-toi-an-thit-moi-ngay": {
-    "title": "Phát Sóng Trực Tiếp Sinh Tồn: Người Khác Chết Đói, Còn Tôi Ăn Thịt Mỗi Ngày!",
-    "folder_slug": "phat-song-truc-tiep-sinh-ton-nguoi-khac-chet-doi-con-toi-an-thit-moi-ngay"
-  },
-  "sau-khi-chup-x-quang-mat-trai-toi-thuc-tinh-thau-thi-nhan-co-the-nhin-xuyen-moi-thu": {
-    "title": "Sau Khi Chụp X-Quang Mắt Trái, Tôi Thức Tỉnh Thấu Thị Nhãn Có Thể Nhìn Xuyên Mọi Thứ!",
-    "folder_slug": "sau-khi-chup-x-quang-mat-trai-toi-thuc-tinh-thau-thi-nhan-co-the-nhin-xuyen-moi-thu"
-  },
-  "mat-danh-u-linh-cai-ten-khien-moi-the-luc-khiep-so": {
-    "title": "MẬT DANH U LINH, CÁI TÊN KHIẾN MỌI THẾ LỰC KHIẾP SỢ",
-    "folder_slug": "mat-danh-u-linh-cai-ten-khien-moi-the-luc-khiep-so"
-  },
-  "ong-bo-bim-sua-gioi-giai-tri-con-gai-dua-toi-len-dinh-luu": {
-    "title": "ÔNG BỐ BỈM SỮA GIỚI GIẢI TRÍ: CON GÁI ĐƯA TÔI LÊN ĐỈNH LƯU",
-    "folder_slug": "ong-bo-bim-sua-gioi-giai-tri-con-gai-dua-toi-len-dinh-luu"
-  },
-  "bi-xem-la-ke-vo-dung-trong-show-sinh-ton-nhung-toi-lai-khien-tat-ca-phai-song-nho-minh": {
-    "title": "Bị Xem Là Kẻ Vô Dụng Trong Show Sinh Tồn, Nhưng Tôi Lại Khiến Tất Cả Phải Sống Nhờ Mình",
-    "folder_slug": "bi-xem-la-ke-vo-dung-trong-show-sinh-ton-nhung-toi-lai-khien-tat-ca-phai-song-nho-minh"
-  },
-  "toi-moi-8-tuoi-cac-nguoi-bat-toi-chay-xe-om-cong-nghe": {
-    "title": "Tôi Mới 8 Tuổi, Các Người Bắt Tôi Chạy Xe Ôm Công Nghệ?!",
-    "folder_slug": "toi-moi-8-tuoi-cac-nguoi-bat-toi-chay-xe-om-cong-nghe"
-  },
-  "toi-chi-la-shipper-giao-do-an-nhung-moi-don-hang-deu-la-mot-hien-truong-an-mang": {
-    "title": "Tôi Chỉ Là Shipper Giao Đồ Ăn, Nhưng Mỗi Đơn Hàng Đều Là Một Hiện Trường Án Mạng!",
-    "folder_slug": "toi-chi-la-shipper-giao-do-an-nhung-moi-don-hang-deu-la-mot-hien-truong-an-mang"
-  },
-  "tu-phe-vat-dinh-luu-den-qua-bom-showbiz-toi-chi-muon-kiem-tien-ma-thoi": {
-    "title": "Từ Phế Vật Đỉnh Lưu Đến Quả Bom Showbiz: Tôi Chỉ Muốn Kiếm Tiền Mà Thôi!",
-    "folder_slug": "tu-phe-vat-dinh-luu-den-qua-bom-showbiz-toi-chi-muon-kiem-tien-ma-thoi"
-  },
-  "toi-phat-hien-ra-ban-cung-lop-voi-minh-dang-gia-vo-la-mot-co-gai-xau-xi": {
-    "title": "Tôi Phát Hiện Ra Bạn Cùng Lớp Với Mình Đang Giả Vờ Là Một Cô Gái Xấu Xí",
-    "folder_slug": "toi-phat-hien-ra-ban-cung-lop-voi-minh-dang-gia-vo-la-mot-co-gai-xau-xi"
-  },
-  "bi-mat-dau-bep-cua-toi-bi-vo-phat-hien-bong-choc-toi-tro-nen-noi-tieng-tren-mang": {
-    "title": "Bí Mật Đầu Bếp Của Tôi Bị Vợ Phát Hiện, Bỗng Chốc Tôi Trở Nên Nổi Tiếng Trên Mạng!",
-    "folder_slug": "bi-mat-dau-bep-cua-toi-bi-vo-phat-hien-bong-choc-toi-tro-nen-noi-tieng-tren-mang"
-  },
-  "tung-la-thien-vuong-nay-bi-lang-quen-nhung-ban-gai-cu-deu-la-dinh-luu": {
-    "title": "Từng Là Thiên Vương, Nay Bị Lãng Quên… Nhưng Bạn Gái Cũ Đều Là Đỉnh Lưu!",
-    "folder_slug": "tung-la-thien-vuong-nay-bi-lang-quen-nhung-ban-gai-cu-deu-la-dinh-luu"
+  "he-thong-ngu-dan-dai-duong-bat-dau-tu-viec-cau-ca-du-vang-lon": {
+    "title": "HỆ THỐNG NGƯ DÂN ĐẠI DƯƠNG: BẮT ĐẦU TỪ VIỆC CÂU CÁ ĐÙ VÀNG LỚN",
+    "folder_slug": "he-thong-ngu-dan-dai-duong-bat-dau-tu-viec-cau-ca-du-vang-lon"
   },
   "trong-sinh-thanh-tai-xe-moi-kilomet-toi-lai-deu-duoc-he-thong-tra-tien": {
     "title": "Trọng Sinh Thành Tài Xế: Mỗi Kilomet Tôi Lái Đều Được Hệ Thống Trả Tiền!",
     "folder_slug": "trong-sinh-thanh-tai-xe-moi-kilomet-toi-lai-deu-duoc-he-thong-tra-tien"
   },
+  "shipper-giao-do-an-khong-toi-chuyen-giao-toi-pham-cho-canh-sat": {
+    "title": "SHIPPER GIAO ĐỒ ĂN? KHÔNG, TÔI CHUYÊN GIAO TỘI PHẠM CHO CẢNH SÁT",
+    "folder_slug": "shipper-giao-do-an-khong-toi-chuyen-giao-toi-pham-cho-canh-sat"
+  },
+  "tiep-quan-khu-du-lich-hoang-phe-toi-khien-ca-nuoc-phat-cuong": {
+    "title": "TIẾP QUẢN KHU DU LỊCH HOANG PHẾ, TÔI KHIẾN CẢ NƯỚC PHÁT CUỒNG",
+    "folder_slug": "tiep-quan-khu-du-lich-hoang-phe-toi-khien-ca-nuoc-phat-cuong"
+  },
+  "bac-si-san-khoa-dinh-cap-toi-phat-hien-cha-dua-be-khong-phai-chong-co-ay": {
+    "title": "BÁC SĨ SẢN KHOA ĐỈNH CẤP: TÔI PHÁT HIỆN CHA ĐỨA BÉ KHÔNG PHẢI CHỒNG CÔ ẤY",
+    "folder_slug": "bac-si-san-khoa-dinh-cap-toi-phat-hien-cha-dua-be-khong-phai-chong-co-ay"
+  },
   "cam-trong-tay-hang-nghin-ty-do-la-tien-hoi-lo-toi-mot-buoc-tro-thanh-sieu-ty-phu": {
     "title": "Từ Kẻ Quỵ Lụy Thành Tỷ Phú: Tôi Có Hệ Thống Tiền Hối Lộ Vô Hạn!",
     "folder_slug": "tu-ke-quy-luy-thanh-ty-phu-toi-co-he-thong-tien-hoi-lo-vo-han"
   },
-  "chi-mot-cau-noi-tren-livestream-toi-thanh-ke-bi-toan-mang-truy-duoi": {
-    "title": "Chỉ Một Câu Nói Trên Livestream, Tôi Thành Kẻ Bị Toàn Mạng Truy Đuổi",
-    "folder_slug": "chi-mot-cau-noi-tren-livestream-toi-thanh-ke-bi-toan-mang-truy-duoi"
+  "toi-chi-muon-dong-vai-phan-dien-nao-ngo-lai-tro-thanh-anh-de": {
+    "title": "Tôi Chỉ Muốn Đóng Vai Phản Diện, Nào Ngờ Lại Trở Thành Ảnh Đế!",
+    "folder_slug": "toi-chi-muon-dong-vai-phan-dien-nao-ngo-lai-tro-thanh-anh-de"
   },
-  "thua-ke-mot-so-thu-ta-dua-vao-do-than-mat-voi-dong-vat-de-thanh-ty-phu": {
-    "title": "Thừa Kế Một Sở Thú, Ta Dựa Vào “Độ Thân Mật” Với Động Vật Để Thành Tỷ Phú",
-    "folder_slug": "thua-ke-mot-so-thu-ta-dua-vao-do-than-mat-voi-dong-vat-de-thanh-ty-phu"
+  "ca-showbiz-dang-phat-dien-truy-lung-than-am-nhac-nhung-khong-ai-biet-nguoi-do-chinh-la-toi": {
+    "title": "Cả Showbiz Đang Phát Điên Truy Lùng Thần Âm Nhạc, Nhưng Không Ai Biết Người Đó Chính Là Tôi!",
+    "folder_slug": "ca-showbiz-dang-phat-dien-truy-lung-than-am-nhac-nhung-khong-ai-biet-nguoi-do-chinh-la-toi"
   },
-  "hai-cha-con-toan-cao-gia-khan-gia-cuoi-khong-tho-noi": {
-    "title": "HAI CHA CON TOÀN CÁO GIÀ KHÁN GIẢ CƯỜI KHÔNG THỞ NỔI",
-    "folder_slug": "hai-cha-con-toan-cao-gia-khan-gia-cuoi-khong-tho-noi"
+  "tru-than-hoa-ra-la-ke-lua-dao-xuyen-khong-roi-han-phai-dung-thuc-luc-de-cuu-van-danh-tieng": {
+    "title": "Trù Thần Hóa Ra Là Kẻ Lừa Đảo? Xuyên Không Rồi, Tôi Phải Dùng Thực Lực Để Cứu Vãn Danh Tiếng!",
+    "folder_slug": "tru-than-hoa-ra-la-ke-lua-dao-xuyen-khong-roi-toi-phai-dung-thuc-luc-de-cuu-van-danh-tieng"
   },
-  "toan-chuc-cao-thu-tu-phap-su-phe-vat-den-ac-mong-dau-truong": {
-    "title": "Toàn Chức Cao Thủ: Từ Pháp Sư Phế Vật Đến Ác Mộng Đấu Trường",
-    "folder_slug": "toan-chuc-cao-thu-tu-phap-su-phe-vat-den-ac-mong-dau-truong"
+  "tan-the-dem-nguoc-toi-duoc-thue-de-cuu-cac-the-gioi-truoc-ngay-diet-vong": {
+    "title": "TẬN THẾ ĐẾM NGƯỢC: TÔI ĐƯỢC THUÊ ĐỂ CỨU CÁC THẾ GIỚI TRƯỚC NGÀY DIỆT VONG",
+    "folder_slug": "tan-the-dem-nguoc-toi-duoc-thue-de-cuu-cac-the-gioi-truoc-ngay-diet-vong"
   },
-  "tro-ve-thap-nien-80-ta-san-ban-nui-ca-gia-dinh-nho": {
-    "title": "TRỞ VỀ THẬP NIÊN 80 TA SĂN BẮN NUI CẢ GIA ĐÌNH NHỎ",
-    "folder_slug": "tro-ve-thap-nien-80-ta-san-ban-nui-ca-gia-dinh-nho"
+  "len-gameshow-chui-nguoi-con-duoc-tien-toi-ca-khia-ca-gioi-giai-tri": {
+    "title": "LÊN GAMESHOW CHỬI NGƯỜI CÒN ĐƯỢC TIỀN, TÔI CÀ KHỊA CẢ GIỚI GIẢI TRÍ",
+    "folder_slug": "len-gameshow-chui-nguoi-con-duoc-tien-toi-ca-khia-ca-gioi-giai-tri"
   },
-  "dien-vai-tham-thanh-anh-de-fan-quy-xin-toi-dung-gia-chet-nua": {
-    "title": "DIỄN VAI THẢM THÀNH ẢNH ĐẾ: FAN QUỲ XIN TÔI ĐỪNG GIẢ CHẾT NỮA",
-    "folder_slug": "dien-vai-tham-thanh-anh-de-fan-quy-xin-toi-dung-gia-chet-nua"
+  "su-hoi-sinh-cua-than-y-kho-tinh-bat-dau-tu-cuoc-bao-thu-dam-mau": {
+    "title": "Sự Hồi Sinh Của Thần Y Khó Tính – Bắt Đầu Từ Cuộc Báo Thù Đẫm Máu!",
+    "folder_slug": "su-hoi-sinh-cua-than-y-kho-tinh-bat-dau-tu-cuoc-bao-thu-dam-mau"
   },
-  "xuyen-qua-van-gioi-toi-cuop-sach-may-man-cua-nhan-vat-chinh": {
-    "title": "Xuyên Qua Vạn Giới: Tôi Cướp Sạch May Mắn Của Nhân Vật Chính!",
-    "folder_slug": "xuyen-qua-van-gioi-toi-cuop-sach-may-man-cua-nhan-vat-chinh"
-  },
-  "gia-vang-tang-dien-cuong-toi-dua-vao-he-thong-moi-ngay-kiem-hang-tram-can-vang": {
-    "title": "Giá Vàng Tăng Điên Cuồng, Tôi Dựa Vào Hệ Thống Mỗi Ngày Kiếm Hàng Trăm Cân Vàng!",
-    "folder_slug": "gia-vang-tang-dien-cuong-toi-dua-vao-he-thong-moi-ngay-kiem-hang-tram-can-vang"
+  "thuc-tinh-he-thong-tim-vang-tu-ke-an-bam-toi-tro-thanh-dai-gia-giau-nhat-vung": {
+    "title": "Thức Tỉnh Hệ Thống Tìm Vàng, Từ Kẻ Ăn Bám Tôi Trở Thành Đại Gia Giàu Nhất Vùng!",
+    "folder_slug": "thuc-tinh-he-thong-tim-vang-tu-ke-an-bam-toi-tro-thanh-dai-gia-giau-nhat-vung"
   },
   "tiep-quan-ho-chua-nuoc-o-que-toi-cai-tao-ho-thanh-thien-duong-cau-ca": {
     "title": "TIẾP QUẢN HỒ CHỨA NƯỚC Ở QUÊ TÔI CẢI TẠO HỒ THÀNH THIÊN ĐƯỜNG CÂU CÁ",
     "folder_slug": "tiep-quan-ho-chua-nuoc-o-que-toi-cai-tao-ho-thanh-thien-duong-cau-ca"
   },
+  "xuyen-khong-gioi-giai-tri-he-thong-bat-toi-lam-tan-thu-hai-nam-ruoi": {
+    "title": "XUYÊN KHÔNG GIỚI GIẢI TRÍ: HỆ THỐNG BẮT TÔI LÀM TÂN THỦ HAI NĂM RƯỠI",
+    "folder_slug": "xuyen-khong-gioi-giai-tri-he-thong-bat-toi-lam-tan-thu-hai-nam-ruoi"
+  },
+  "ong-bo-bim-sua-gioi-giai-tri-con-gai-dua-toi-len-dinh-luu": {
+    "title": "ÔNG BỐ BỈM SỮA GIỚI GIẢI TRÍ: CON GÁI ĐƯA TÔI LÊN ĐỈNH LƯU",
+    "folder_slug": "ong-bo-bim-sua-gioi-giai-tri-con-gai-dua-toi-len-dinh-luu"
+  },
+  "ten-trom-hang-f-xin-loi-toi-co-the-an-cap-bat-cu-thu-gi": {
+    "title": "Tên Trộm Hạng F? Xin Lỗi, Tôi Có Thể Ăn Cắp Bất Cứ Thứ Gì!",
+    "folder_slug": "ten-trom-hang-f-xin-loi-toi-co-the-an-cap-bat-cu-thu-gi"
+  },
+  "xuyen-khong-lam-shipper-so-nho-toi-cang-bi-khieu-nai-cang-pha-duoc-nhieu-vu-an": {
+    "title": "Xuyên Không Làm Shipper Số Nhọ , Tôi Càng Bị Khiếu Nại Càng Phá Được Nhiều Vụ Án!",
+    "folder_slug": "xuyen-khong-lam-shipper-so-nho-toi-cang-bi-khieu-nai-cang-pha-duoc-nhieu-vu-an"
+  },
   "vi-cuu-em-gai-toi-mot-minh-giet-xuyen-the-gioi-ngam": {
     "title": "VÌ CỨU EM GÁI TÔI MỘT MÌNH GIẾT XUYÊN THẾ GIỚI NGẦM",
     "folder_slug": "vi-cuu-em-gai-toi-mot-minh-giet-xuyen-the-gioi-ngam"
+  },
+  "tung-vi-yeu-ma-mat-tat-ca-cuoi-cung-toi-khien-ca-the-gioi-phai-hat-theo-minh": {
+    "title": "Từng Vì Yêu Mà Mất Tất Cả, Cuối Cùng Tôi Khiến Cả Thế Giới Phải Hát Theo Mình!",
+    "folder_slug": "tung-vi-yeu-ma-mat-tat-ca-cuoi-cung-toi-khien-ca-the-gioi-phai-hat-theo-minh"
+  },
+  "he-thong-ong-cau-max-cap-boi-duong-muoi-sau-thien-tai": {
+    "title": "HỆ THỐNG ÔNG CẬU MAX CẤP: BỒI DƯỠNG MƯỜI SÁU THIÊN TÀI",
+    "folder_slug": "he-thong-ong-cau-max-cap-boi-duong-muoi-sau-thien-tai"
+  },
+  "trung-sinh-gioi-giai-tri-toi-chi-muon-kin-tieng-lam-nguoi-dung-sau": {
+    "title": "TRÙNG SINH GIỚI GIẢI TRÍ: TÔI CHỈ MUỐN KÍN TIẾNG LÀM NGƯỜI ĐỨNG SAU",
+    "folder_slug": "trung-sinh-gioi-giai-tri-toi-chi-muon-kin-tieng-lam-nguoi-dung-sau"
+  },
+  "bi-he-thong-ep-di-nhap-ngu-toi-lai-tro-thanh-than-chien-tranh-manh-nhat": {
+    "title": "Bị Hệ Thống Ép Đi Nhập Ngũ, Tôi Lại Trở Thành Thần Chiến Tranh Mạnh Nhất!",
+    "folder_slug": "bi-he-thong-ep-di-nhap-ngu-toi-lai-tro-thanh-than-chien-tranh-manh-nhat"
+  },
+  "thap-nien-70-nguoi-dan-ong-lanh-lung-nhat-quan-khu-cuoi-cung-cung-quy-xuong-vi-vo": {
+    "title": "Thập Niên 70: Người Đàn Ông Lạnh Lùng Nhất Quân Khu Cuối Cùng Cũng Quỳ Xuống Vì Vợ!",
+    "folder_slug": "thap-nien-70-nguoi-dan-ong-lanh-lung-nhat-quan-khu-cuoi-cung-cung-quy-xuong-vi-vo"
+  },
+  "livestream-hoang-dao-toi-xay-thien-duong-giua-bien-khoi": {
+    "title": "LIVESTREAM HOANG ĐẢO: TÔI XÂY THIÊN ĐƯỜNG GIỮA BIỂN KHƠI",
+    "folder_slug": "livestream-hoang-dao-toi-xay-thien-duong-giua-bien-khoi"
+  },
+  "do-cong-chuc-lien-da-toi-tham-gia-show-hen-ho-toi-noi-ran-ran": {
+    "title": "ĐỖ CÔNG CHỨC LIỀN ĐÁ TÔI? THAM GIA SHOW HẸN HÒ TÔI NỔI RẦN RẦN",
+    "folder_slug": "do-cong-chuc-lien-da-toi-tham-gia-show-hen-ho-toi-noi-ran-ran"
+  },
+  "tu-ke-that-nghiep-den-ong-trum-gioi-giai-tri-moi-bai-hat-cua-toi-deu-la-sieu-pham-bat-hu": {
+    "title": "Từ Kẻ Thất Nghiệp Đến Ông Trùm Giới Giải Trí, Mỗi Bài Hát Của Tôi Đều Là Siêu Phẩm Bất Hủ!",
+    "folder_slug": "tu-ke-that-nghiep-den-ong-trum-gioi-giai-tri-moi-bai-hat-cua-toi-deu-la-sieu-pham-bat-hu"
+  },
+  "toi-khong-den-de-bao-thu-toi-den-de-thiet-lap-lai-luat-choi-cua-gioi-giai-tri": {
+    "title": "Tôi Không Đến Để Báo Thù, Tôi Đến Để Thiết Lập Lại Luật Chơi Của Giới Giải Trí!",
+    "folder_slug": "toi-khong-den-de-bao-thu-toi-den-de-thiet-lap-lai-luat-choi-cua-gioi-giai-tri"
+  },
+  "tu-bac-si-thuc-tap-den-than-y-toi-so-huu-he-thong-mo-phong-kiep-song": {
+    "title": "Từ Bác Sĩ Thực Tập Đến Thần Y: Tôi Sở Hữu Hệ Thống Mô Phỏng Kiếp Sống!",
+    "folder_slug": "tu-bac-si-thuc-tap-den-than-y-toi-so-huu-he-thong-mo-phong-kiep-song"
+  },
+  "con-duong-noi-tieng-cua-toi-khoi-dau-bang-mot-cuoc-goi-bao-an": {
+    "title": "CON ĐƯỜNG NỔI TIẾNG CỦA TÔI KHỞI ĐẦU BĂNG MỘT CUỘC GỌI BÁO ÁN",
+    "folder_slug": "con-duong-noi-tieng-cua-toi-khoi-dau-bang-mot-cuoc-goi-bao-an"
+  },
+  "chi-muon-ban-hang-rong-nuoi-con-gai-ai-ngo-ca-thanh-pho-deu-phat-dien-vi-mui-mon-an-cua-toi": {
+    "title": "Chỉ Muốn Bán Hàng Rong Nuôi Con Gái, Ai Ngờ Cả Thành Phố Đều Phát Điên Vì Mùi Món Ăn Của Tôi!",
+    "folder_slug": "chi-muon-ban-hang-rong-nuoi-con-gai-ai-ngo-ca-thanh-pho-deu-phat-dien-vi-mui-mon-an-cua-toi"
+  },
+  "ban-hang-rong-bi-an-ninh-ruot-khap-thanh-pho-ket-qua-ho-lai-thanh-khach-ruot-cua-toi": {
+    "title": "Bán Hàng Rong Bị An Ninh Rượt Khắp Thành Phố, Kết Quả Họ Lại Thành Khách Ruột Của Tôi",
+    "folder_slug": "ban-hang-rong-bi-an-ninh-ruot-khap-thanh-pho-ket-qua-ho-lai-thanh-khach-ruot-cua-toi"
+  },
+  "tu-nha-lam-game-den-dinh-cao-tu-ban-toi-chi-muon-lam-game-sao-lai-thanh-dinh-luu-roi": {
+    "title": "Từ Nhà Làm Game Đến Đỉnh Cao Tư Bản: Tôi Chỉ Muốn Làm Game, Sao Lại Thành Đỉnh Lưu Rồi?",
+    "folder_slug": "tu-nha-lam-game-den-dinh-cao-tu-ban-toi-chi-muon-lam-game-sao-lai-thanh-dinh-luu-roi"
+  },
+  "ong-vua-an-bam-so-1-gioi-giai-tri-chong-hop-dong-cua-thien-hau": {
+    "title": "ÔNG VUA ĂN BÁM SỐ 1 GIỚI GIẢI TRÍ: CHỒNG HỢP ĐỒNG CỦA THIÊN HẬU",
+    "folder_slug": "ong-vua-an-bam-so-1-gioi-giai-tri-chong-hop-dong-cua-thien-hau"
+  },
+  "co-vo-minh-tinh-muon-huy-hoai-toi-nao-ngo-toi-noi-tieng-hon-co-ay": {
+    "title": "VỢ CŨ MINH TINH MUỐN HỦY HOẠI TÔI NÀO NGỜ TÔI NỔI TIẾNG HƠN CÔ ẤY",
+    "folder_slug": "vo-cu-minh-tinh-muon-huy-hoai-toi-nao-ngo-toi-noi-tieng-hon-co-ay"
+  },
+  "bi-phong-sat-toan-mang-toi-dung-am-nhac-tai-chan-dinh-luu": {
+    "title": "Bị Phong Sát Toàn Mạng, Tôi Dùng Âm Nhạc Tái Chấn Đỉnh Lưu",
+    "folder_slug": "bi-phong-sat-toan-mang-toi-dung-am-nhac-tai-chan-dinh-luu"
+  },
+  "livestream-hat-rong-toi-khien-ca-lam-tinh-phat-dien-chi-bang-nhac-cu-dia-cau": {
+    "title": "Livestream Hát Rong: Tôi Khiến Cả Lam Tinh Phát Điên Chỉ Bằng Nhạc Cũ Địa Cầu!",
+    "folder_slug": "livestream-hat-rong-toi-khien-ca-lam-tinh-phat-dien-chi-bang-nhac-cu-dia-cau"
+  },
+  "toi-chi-con-3-thang-de-song-nhung-lai-tro-thanh-ngoi-sao-khien-ca-mang-phat-dien": {
+    "title": "Tôi Chỉ Còn 3 Tháng Để Sống, Nhưng Lại Trở Thành Ngôi Sao Khiến Cả Mạng Phát Điên",
+    "folder_slug": "toi-chi-con-3-thang-de-song-nhung-lai-tro-thanh-ngoi-sao-khien-ca-mang-phat-dien"
+  },
+  "tu-phe-vat-dinh-luu-den-qua-bom-showbiz-toi-chi-muon-kiem-tien-ma-thoi": {
+    "title": "Từ Phế Vật Đỉnh Lưu Đến Quả Bom Showbiz: Tôi Chỉ Muốn Kiếm Tiền Mà Thôi!",
+    "folder_slug": "tu-phe-vat-dinh-luu-den-qua-bom-showbiz-toi-chi-muon-kiem-tien-ma-thoi"
+  },
+  "toi-chi-la-shipper-giao-do-an-nhung-moi-don-hang-deu-la-mot-hien-truong-an-mang": {
+    "title": "Tôi Chỉ Là Shipper Giao Đồ Ăn, Nhưng Mỗi Đơn Hàng Đều Là Một Hiện Trường Án Mạng!",
+    "folder_slug": "toi-chi-la-shipper-giao-do-an-nhung-moi-don-hang-deu-la-mot-hien-truong-an-mang"
+  },
+  "hai-cha-con-toan-cao-gia-khan-gia-cuoi-khong-tho-noi": {
+    "title": "HAI CHA CON TOÀN CÁO GIÀ KHÁN GIẢ CƯỜI KHÔNG THỞ NỔI",
+    "folder_slug": "hai-cha-con-toan-cao-gia-khan-gia-cuoi-khong-tho-noi"
+  },
+  "sau-khi-chup-x-quang-mat-trai-toi-thuc-tinh-thau-thi-nhan-co-the-nhin-xuyen-moi-thu": {
+    "title": "Sau Khi Chụp X-Quang Mắt Trái, Tôi Thức Tỉnh Thấu Thị Nhãn Có Thể Nhìn Xuyên Mọi Thứ!",
+    "folder_slug": "sau-khi-chup-x-quang-mat-trai-toi-thuc-tinh-thau-thi-nhan-co-the-nhin-xuyen-moi-thu"
+  },
+  "mot-bai-hat-toi-cuu-mot-bo-phim-mot-khuc-nhac-toi-cuu-mot-mang-nguoi": {
+    "title": "Một Bài Hát Tôi Cứu Một Bộ Phim, Một Khúc Nhạc Tôi Cứu Một Mạng Người!",
+    "folder_slug": "mot-bai-hat-toi-cuu-mot-bo-phim-mot-khuc-nhac-toi-cuu-mot-mang-nguoi"
+  },
+  "sao-khi-sap-phong-ca-gioi-giai-tri-bi-toi-choc-tuc-dien": {
+    "title": "SAO KHI SẬP PHÒNG CẢ GIỚI GIẢI TRÍ BỊ TÔI CHỌC TỨC ĐIÊN",
+    "folder_slug": "sao-khi-sap-phong-ca-gioi-giai-tri-bi-toi-choc-tuc-dien"
+  },
+  "bat-toi-dong-phan-dien-xin-loi-toi-dien-thanh-trum-cuoi-luon-roi": {
+    "title": "Bắt Tôi Đóng Phản Diện? Xin Lỗi, Tôi Diễn Thành Trùm Cuối Luôn Rồi!",
+    "folder_slug": "bat-toi-dong-phan-dien-xin-loi-toi-dien-thanh-trum-cuoi-luon-roi"
+  },
+  "gia-vang-tang-dien-cuong-toi-dua-vao-he-thong-moi-ngay-kiem-hang-tram-can-vang": {
+    "title": "Giá Vàng Tăng Điên Cuồng, Tôi Dựa Vào Hệ Thống Mỗi Ngày Kiếm Hàng Trăm Cân Vàng!",
+    "folder_slug": "gia-vang-tang-dien-cuong-toi-dua-vao-he-thong-moi-ngay-kiem-hang-tram-can-vang"
+  },
+  "phat-song-truc-tiep-sinh-ton-nguoi-khac-chet-doi-con-toi-an-thit-moi-ngay": {
+    "title": "Phát Sóng Trực Tiếp Sinh Tồn: Người Khác Chết Đói, Còn Tôi Ăn Thịt Mỗi Ngày!",
+    "folder_slug": "phat-song-truc-tiep-sinh-ton-nguoi-khac-chet-doi-con-toi-an-thit-moi-ngay"
+  },
+  "demo-game-dom": {
+    "title": "TRÒ CHƠI NÀY CŨNG NUỐT NỔI SAO? XIN CÁC NGƯỜI HOÀN TIỀN ĐI?",
+    "folder_slug": "tro-choi-nay-cung-nuot-noi-sao-xin-cac-nguoi-hoan-tien-di"
+  },
+  "ve-que-lam-heo-an-tet-khong-ngo-noi-tieng-toan-mang": {
+    "title": "VỀ QUÊ LÀM HEO ĂN TẾT KHÔNG NGỜ NỖI TIẾNG TOÀN MẠNG",
+    "folder_slug": "ve-que-lam-heo-an-tet-khong-ngo-noi-tieng-toan-mang"
+  },
+  "tham-gia-show-hen-ho-toi-co-tinh-e-nhung-nu-than-lai-do-hang-loat": {
+    "title": "Tham Gia Show Hẹn Hò, Tôi Cố Tình Ế Nhưng Nữ Thần Lại Đổ Hàng Loạt!",
+    "folder_slug": "tham-gia-show-hen-ho-toi-co-tinh-e-nhung-nu-than-lai-do-hang-loat"
+  },
+  "mat-danh-u-linh-cai-ten-khien-moi-the-luc-khiep-so": {
+    "title": "MẬT DANH U LINH, CÁI TÊN KHIẾN MỌI THẾ LỰC KHIẾP SỢ",
+    "folder_slug": "mat-danh-u-linh-cai-ten-khien-moi-the-luc-khiep-so"
+  },
+  "quay-hang-my-thuc-xuat-hien-ngau-nhien-ca-thanh-pho-phat-cuong-truy-tim-toi": {
+    "title": "Quầy Hàng Mỹ Thực Xuất Hiện Ngẫu Nhiên, Cả Thành Phố Phát Cuồng Truy Tìm Tôi",
+    "folder_slug": "quay-hang-my-thuc-xuat-hien-ngau-nhien-ca-thanh-pho-phat-cuong-truy-tim-toi"
+  },
+  "khoi-dau-voi-mot-bai-hat-ve-nguoi-cha-toi-khien-ca-mang-dong-loat-roi-le": {
+    "title": "Khởi Đầu Với Một Bài Hát Về Người Cha, Tôi Khiến Cả Mạng Đồng Loạt Rơi Lệ!",
+    "folder_slug": "khoi-dau-voi-mot-bai-hat-ve-nguoi-cha-toi-khien-ca-mang-dong-loat-roi-le"
+  },
+  "bi-loai-khoi-show-tuyen-tu-toi-dung-mot-ca-khuc-ma-phong-than": {
+    "title": "Từ Kẻ Vô Danh Đến Đỉnh Lưu, Tôi Dùng Một Ca Khúc Chấn Động Cả Giới Giải Trí",
+    "folder_slug": "tu-ke-vo-danh-den-dinh-luu-toi-dung-mot-ca-khuc-chan-dong-ca-gioi-giai-tri"
+  },
+  "livestream-truc-tiep-moi-ngay-mot-lan-gay-chan-dong-coi-mang": {
+    "title": "LIVESTREAM TRỰC TIẾP: MỖI NGÀY MỘT LẦN GÂY CHẤN ĐỘNG CÕI MẠNG",
+    "folder_slug": "livestream-truc-tiep-moi-ngay-mot-lan-gay-chan-dong-coi-mang"
+  },
+  "tu-ke-bi-ghet-nhat-showbiz-den-vua-gameshow-toi-co-he-thong-giai-tri-sieu-pham": {
+    "title": "Từ Kẻ Bị Ghét Nhất Showbiz Đến Vua Gameshow: Tôi Có Hệ Thống Giải Trí Siêu Phàm!",
+    "folder_slug": "tu-ke-bi-ghet-nhat-showbiz-den-vua-gameshow-toi-co-he-thong-giai-tri-sieu-pham"
+  },
+  "tu-dinh-luu-ngheo-nhat-showbiz-toi-dua-vao-lam-tu-thien-ma-phong-than": {
+    "title": "Từ Đỉnh Lưu Nghèo Nhất Showbiz, Tôi Dựa Vào Làm Từ Thiện Mà Phong Thần!",
+    "folder_slug": "tu-dinh-luu-ngheo-nhat-showbiz-toi-dua-vao-lam-tu-thien-ma-phong-than"
+  },
+  "livestream-lam-do-thu-cong-toi-bi-cong-an-moi-uong-tra": {
+    "title": "LIVESTREAM LÀM ĐỒ THỦ CÔNG TÔI BỊ CÔNG AN MỜI UỐNG TRÀ",
+    "folder_slug": "livestream-lam-do-thu-cong-toi-bi-cong-an-moi-uong-tra"
+  },
+  "dien-vai-tham-thanh-anh-de-fan-quy-xin-toi-dung-gia-chet-nua": {
+    "title": "DIỄN VAI THẢM THÀNH ẢNH ĐẾ: FAN QUỲ XIN TÔI ĐỪNG GIẢ CHẾT NỮA",
+    "folder_slug": "dien-vai-tham-thanh-anh-de-fan-quy-xin-toi-dung-gia-chet-nua"
+  },
+  "sinh-ton-noi-hoang-da-toi-dua-vao-he-thong-song-nhu-di-nghi-duong": {
+    "title": "Sinh Tồn Nơi Hoang Dã: Tôi Dựa Vào Hệ Thống Sống Như Đi Nghỉ Dưỡng",
+    "folder_slug": "sinh-ton-noi-hoang-da-toi-dua-vao-he-thong-song-nhu-di-nghi-duong"
+  },
+  "xuyen-ve-thoi-bao-cap-cuoi-vo-dep-lam-dai-lao": {
+    "title": "XUYÊN VỀ THỜI BAO CẤP: CƯỚI VỢ ĐẸP, LÀM ĐẠI LÃO",
+    "folder_slug": "xuyen-ve-thoi-bao-cap-cuoi-vo-dep-lam-dai-lao"
+  },
+  "thua-ke-mot-so-thu-ta-dua-vao-do-than-mat-voi-dong-vat-de-thanh-ty-phu": {
+    "title": "Thừa Kế Một Sở Thú, Ta Dựa Vào “Độ Thân Mật” Với Động Vật Để Thành Tỷ Phú",
+    "folder_slug": "thua-ke-mot-so-thu-ta-dua-vao-do-than-mat-voi-dong-vat-de-thanh-ty-phu"
+  },
+  "he-thong-bat-toi-ban-hang-gia-nhung-toan-ship-nham-hang-xin": {
+    "title": "Hệ Thống Bắt Tôi Bán Hàng Giả, Nhưng Toàn Ship Nhầm Hàng Xịn!",
+    "folder_slug": "he-thong-bat-toi-ban-hang-gia-nhung-toan-ship-nham-hang-xin"
+  },
+  "toi-moi-8-tuoi-cac-nguoi-bat-toi-chay-xe-om-cong-nghe": {
+    "title": "Tôi Mới 8 Tuổi, Các Người Bắt Tôi Chạy Xe Ôm Công Nghệ?!",
+    "folder_slug": "toi-moi-8-tuoi-cac-nguoi-bat-toi-chay-xe-om-cong-nghe"
+  },
+  "di-cau-gio-trong-show-hen-ho-nao-ngo-hot-nhat-toan-mang": {
+    "title": "ĐI CÂU GIỜ TRONG SHOW HẸN HÒ NÀO NGỜ HÓT NHẤT TOÀN MẠNG",
+    "folder_slug": "di-cau-gio-trong-show-hen-ho-nao-ngo-hot-nhat-toan-mang"
+  },
+  "toi-chi-muon-lam-streamer-nao-ngo-moi-ngay-deu-lap-dai-cong": {
+    "title": "TÔI CHỈ MUỐN LÀM STREAMER NÀO NGỜ MỖI NGÀY ĐỀU LẬP ĐẠI CÔNG",
+    "folder_slug": "toi-chi-muon-lam-streamer-nao-ngo-moi-ngay-deu-lap-dai-cong"
+  },
+  "tro-ve-thap-nien-80-ta-san-ban-nui-ca-gia-dinh-nho": {
+    "title": "TRỞ VỀ THẬP NIÊN 80 TA SĂN BẮN NUI CẢ GIA ĐÌNH NHỎ",
+    "folder_slug": "tro-ve-thap-nien-80-ta-san-ban-nui-ca-gia-dinh-nho"
+  },
+  "mau-dung-tay-lai-di-noi-quy-nha-truong-sap-viet-khong-xue-roi": {
+    "title": "MAU DỪNG TAY LẠI ĐI NỘI QUY NHÀ TRƯỜNG SẮP VIẾT KHÔNG XUỂ RỒI",
+    "folder_slug": "mau-dung-tay-lai-di-noi-quy-nha-truong-sap-viet-khong-xue-roi"
+  },
+  "he-thong-coi-am-tham-gia-show-nghe-nghiep-ta-khien-dao-dien-muon-khoc": {
+    "title": "Hệ Thống Cõi Âm: Tham Gia Show Nghề Nghiệp, Ta Khiến Đạo Diễn Muốn Khóc",
+    "folder_slug": "he-thong-coi-am-tham-gia-show-nghe-nghiep-ta-khien-dao-dien-muon-khoc"
+  },
+  "moi-tam-tuoi-da-bi-ket-an-20-nam-tu-chi-vi-lam-gia-dong-do-la": {
+    "title": "Mới Tám Tuổi Đã Bị Kết Án 20 Năm Tù, Chỉ Vì Làm Giả Đồng Đô La!",
+    "folder_slug": "moi-tam-tuoi-da-bi-ket-an-20-nam-tu-chi-vi-lam-gia-dong-do-la"
+  },
+  "quay-ban-hang-rong-cua-toi-khien-thuc-khach-them-phat-khoc": {
+    "title": "QUẦY BÁN HÀNG RONG CỦA TÔI KHIẾN THỰC KHÁCH THÈM PHÁT KHÓC",
+    "folder_slug": "quay-ban-hang-rong-cua-toi-khien-thuc-khach-them-phat-khoc"
+  },
+  "toan-cau-thuc-tinh-ky-nang-rac-cua-toi-deu-tien-hoa-thanh-cap-than": {
+    "title": "Toàn Cầu Thức Tỉnh: Kỹ Năng Rác Của Tôi Đều Tiến Hóa Thành Cấp Thần!",
+    "folder_slug": "toan-cau-thuc-tinh-ky-nang-rac-cua-toi-deu-tien-hoa-thanh-cap-than"
+  },
+  "tu-than-tuong-quoc-dan-den-ke-bi-ruong-bo-toi-dung-am-nhac-dap-nat-gioi-tu-ban": {
+    "title": "Từ Thần Tượng Quốc Dân Đến Kẻ Bị Ruồng Bỏ: Tôi Dùng Âm Nhạc Đập Nát Giới Tư Bản!",
+    "folder_slug": "tu-than-tuong-quoc-dan-den-ke-bi-ruong-bo-toi-dung-am-nhac-dap-nat-gioi-tu-ban"
+  },
+  "ket-doi-voi-nu-than-de-kich-hoat-he-thong-toi-vo-tinh-thanh-thien-vuong-giai-tri": {
+    "title": "Kết Đôi Với Nữ Thần Để Kích Hoạt Hệ Thống, Tôi Vô Tình Thành Thiên Vương Giải Trí",
+    "folder_slug": "ket-doi-voi-nu-than-de-kich-hoat-he-thong-toi-vo-tinh-thanh-thien-vuong-giai-tri"
+  },
+  "xuyen-qua-van-gioi-toi-cuop-sach-may-man-cua-nhan-vat-chinh": {
+    "title": "Xuyên Qua Vạn Giới: Tôi Cướp Sạch May Mắn Của Nhân Vật Chính!",
+    "folder_slug": "xuyen-qua-van-gioi-toi-cuop-sach-may-man-cua-nhan-vat-chinh"
+  },
+  "tu-ke-vo-danh-den-ong-trum-giai-tri-ta-dieu-khien-ca-de-che-nu-minh-tinh": {
+    "title": "Từ Kẻ Vô Danh Đến Ông Trùm Giải Trí: Tôi Điều Khiển Cả Đế Chế Nữ Minh Tinh!",
+    "folder_slug": "tu-ke-vo-danh-den-ong-trum-giai-tri-toi-dieu-khien-ca-de-che-nu-minh-tinh"
+  },
+  "dien-vai-toi-pham-qua-dinh-fan-toan-nghi-toi-la-hung-thu-that": {
+    "title": "DIỄN VAI TỘI PHẠM QUÁ ĐỈNH FAN TOÀN NGHI TÔI LÀ HUNG THỦ THẬT",
+    "folder_slug": "dien-vai-toi-pham-qua-dinh-fan-toan-nghi-toi-la-hung-thu-that"
+  },
+  "dien-vai-xa-hoi-den-qua-giong-toi-bi-toan-quoc-xem-la-toi-pham": {
+    "title": "Diễn Vai Xã Hội Đen Quá Giống, Tôi Bị Toàn Quốc Xem Là Tội Phạm",
+    "folder_slug": "dien-vai-xa-hoi-den-qua-giong-toi-bi-toan-quoc-xem-la-toi-pham"
+  },
+  "tham-gia-show-du-lich-cac-nu-minh-tinh-lai-muon-hen-ho-voi-toi": {
+    "title": "Tham Gia Show Du Lịch, Các Nữ Minh Tinh Lại Muốn Hẹn Hò Với Tôi",
+    "folder_slug": "tham-gia-show-du-lich-cac-nu-minh-tinh-lai-muon-hen-ho-voi-toi"
+  },
+  "toan-chuc-cao-thu-tu-phap-su-phe-vat-den-ac-mong-dau-truong": {
+    "title": "Toàn Chức Cao Thủ: Từ Pháp Sư Phế Vật Đến Ác Mộng Đấu Trường",
+    "folder_slug": "toan-chuc-cao-thu-tu-phap-su-phe-vat-den-ac-mong-dau-truong"
+  },
+  "sinh-ton-hoang-da-ta-chat-tat-ca-bang-con-dao-bep-bi-gay": {
+    "title": "Sinh Tồn Hoang Dã: Ta Chặt Tất Cả Bằng Con Dao Bếp Bị Gãy!",
+    "folder_slug": "sinh-ton-hoang-da-ta-chat-tat-ca-bang-con-dao-bep-bi-gay"
+  },
+  "tu-sao-het-thoi-den-anh-de-dien-nhat-showbiz-toi-dua-vao-say-ruou-de-thanh-dinh-luu": {
+    "title": "Từ Sao Hết Thời Đến Ảnh Đế Điên Nhất Showbiz, Tôi Dựa Vào Say Rượu Để Thành Đỉnh Lưu!",
+    "folder_slug": "tu-sao-het-thoi-den-anh-de-dien-nhat-showbiz-toi-dua-vao-say-ruou-de-thanh-dinh-luu"
+  },
+  "chi-mot-cau-noi-tren-livestream-toi-thanh-ke-bi-toan-mang-truy-duoi": {
+    "title": "Chỉ Một Câu Nói Trên Livestream, Tôi Thành Kẻ Bị Toàn Mạng Truy Đuổi",
+    "folder_slug": "chi-mot-cau-noi-tren-livestream-toi-thanh-ke-bi-toan-mang-truy-duoi"
+  },
+  "dao-dien-tai-tieng-nhat-showbiz-bi-chui-khong-co-tam-nhung-moi-bo-phim-lai-gay-bao-du-luan": {
+    "title": "ĐẠO DIỄN TAI TIẾNG NHẤT SHOWBIZ: BỊ CHỬI KHÔNG CÓ TẦM NHƯNG MỖI BỘ PHIM LẠI GÂY BÃO DƯ LUẬN",
+    "folder_slug": "dao-dien-tai-tieng-nhat-showbiz-bi-chui-khong-co-tam-nhung-moi-bo-phim-lai-gay-bao-du-luan"
+  },
+  "tung-la-thien-vuong-nay-bi-lang-quen-nhung-ban-gai-cu-deu-la-dinh-luu": {
+    "title": "Từng Là Thiên Vương, Nay Bị Lãng Quên… Nhưng Bạn Gái Cũ Đều Là Đỉnh Lưu!",
+    "folder_slug": "tung-la-thien-vuong-nay-bi-lang-quen-nhung-ban-gai-cu-deu-la-dinh-luu"
+  },
+  "trong-sinh-trong-gioi-giai-tri-dung-noi-chuyen-tinh-cam-voi-toi": {
+    "title": "TRỌNG SINH TRONG GIỚI GIẢI TRÍ: ĐỪNG NÓI CHUYỆN TÌNH CẢM VỚI TÔI",
+    "folder_slug": "trong-sinh-trong-gioi-giai-tri-dung-noi-chuyen-tinh-cam-voi-toi"
+  },
+  "tu-game-thu-bi-cam-tai-khoan-oan-uc-den-ke-khien-cac-ong-lon-cua-ca-nganh-game-run-so": {
+    "title": "Từ Game Thủ Bị Cấm Tài Khoản Oan Ức Đến Kẻ Khiến Các Ông Lớn Của Cả Ngành Game Run Sợ",
+    "folder_slug": "tu-game-thu-bi-cam-tai-khoan-oan-uc-den-ke-khien-cac-ong-lon-cua-ca-nganh-game-run-so"
+  },
+  "than-hao-co-phieu-tu-ke-trang-tay-tro-thanh-ong-trum-tai-chinh": {
+    "title": "THẦN HÀO CỔ PHIẾU: TỪ KẺ TRẮNG TAY TRỞ THÀNH ÔNG TRÙM TÀI CHÍNH",
+    "folder_slug": "than-hao-co-phieu-tu-ke-trang-tay-tro-thanh-ong-trum-tai-chinh"
+  },
+  "mot-tiem-kim-khi-nho-nhung-khien-gioi-chuyen-gia-phai-cuoi-dau": {
+    "title": "MỘT TIỆM KIM KHÍ NHỎ NHƯNG KHIẾN GIỚI CHUYÊN GIA PHẢI CUỐI ĐẦU!",
+    "folder_slug": "mot-tiem-kim-khi-nho-nhung-khien-gioi-chuyen-gia-phai-cuoi-dau"
+  },
+  "toi-mot-idol-vo-danh-mot-buoc-thanh-dinh-luu-nho-runing-man": {
+    "title": "TÔI MỘT IDOL VÔ DANH MỘT BƯỚC THÀNH ĐỈNH LƯU NHỜ RUNING MAN",
+    "folder_slug": "toi-mot-idol-vo-danh-mot-buoc-thanh-dinh-luu-nho-runing-man"
+  },
+  "mot-nguoi-thong-tri-ca-gioi-giai-tri-kiet-tac-va-tham-hoa-deu-do-toi-tao-ra": {
+    "title": "Một Người Thống Trị Cả Giới Giải Trí: Kiệt Tác Và Thảm Họa Đều Do Tôi Tạo Ra",
+    "folder_slug": "mot-nguoi-thong-tri-ca-gioi-giai-tri-kiet-tac-va-tham-hoa-deu-do-toi-tao-ra"
+  },
+  "tu-show-hen-ho-bien-thanh-cuoc-tham-hiem-toi-va-nu-than-kham-pha-lang-mo-co": {
+    "title": "Từ Show Hẹn Hò Biến Thành Cuộc Thám Hiểm, Tôi Và Nữ Thần Khám Phá Lăng Mộ Cổ",
+    "folder_slug": "tu-show-hen-ho-bien-thanh-cuoc-tham-hiem-toi-va-nu-than-kham-pha-lang-mo-co"
+  },
+  "bi-mat-dau-bep-cua-toi-bi-vo-phat-hien-bong-choc-toi-tro-nen-noi-tieng-tren-mang": {
+    "title": "Bí Mật Đầu Bếp Của Tôi Bị Vợ Phát Hiện, Bỗng Chốc Tôi Trở Nên Nổi Tiếng Trên Mạng!",
+    "folder_slug": "bi-mat-dau-bep-cua-toi-bi-vo-phat-hien-bong-choc-toi-tro-nen-noi-tieng-tren-mang"
+  },
+  "toi-bi-mot-nu-sinh-bat-nat-o-truong-cuop-mat-tien-vay-ma-he-thong-lai-muon-toi-thu-nhan-tinh-cam-cua-minh-voi-co-ta": {
+    "title": "Tôi Bị Một Nữ Sinh Bắt Nạt Ở Trường Cướp Mất Tiền, Vậy Mà Hệ Thống Lại Muốn Tôi Thú Nhận Tình Cảm Của Mình Với Cô Ta?",
+    "folder_slug": "toi-bi-mot-nu-sinh-bat-nat-o-truong-cuop-mat-tien-vay-ma-he-thong-lai-muon-toi-thu-nhan-tinh-cam-cua-minh-voi-co-ta"
+  },
+  "toi-phat-hien-ra-ban-cung-lop-voi-minh-dang-gia-vo-la-mot-co-gai-xau-xi": {
+    "title": "Tôi Phát Hiện Ra Bạn Cùng Lớp Với Mình Đang Giả Vờ Là Một Cô Gái Xấu Xí",
+    "folder_slug": "toi-phat-hien-ra-ban-cung-lop-voi-minh-dang-gia-vo-la-mot-co-gai-xau-xi"
+  },
+  "so-huu-he-thong-nhan-cach-tu-dien-vien-quan-chung-den-anh-de": {
+    "title": "SỞ HỮU HỆ THỐNG NHÂN CÁCH: TỪ DIỄN VIÊN QUẦN CHÚNG ĐẾN ẢNH ĐẾ",
+    "folder_slug": "so-huu-he-thong-nhan-cach-tu-dien-vien-quan-chung-den-anh-de"
+  },
+  "bat-dau-tu-mot-quay-com-le-duong-toi-khien-ca-mang-them-thuong-den-phat-cuong": {
+    "title": "Bắt Đầu Từ Một Quầy Cơm Lề Đường, Tôi Khiến Cả Mạng Thèm Thuồng Đến Phát Cuồng",
+    "folder_slug": "bat-dau-tu-mot-quay-com-le-duong-toi-khien-ca-mang-them-thuong-den-phat-cuong"
+  },
+  "bi-xem-la-ke-vo-dung-trong-show-sinh-ton-nhung-toi-lai-khien-tat-ca-phai-song-nho-minh": {
+    "title": "Bị Xem Là Kẻ Vô Dụng Trong Show Sinh Tồn, Nhưng Tôi Lại Khiến Tất Cả Phải Sống Nhờ Mình",
+    "folder_slug": "bi-xem-la-ke-vo-dung-trong-show-sinh-ton-nhung-toi-lai-khien-tat-ca-phai-song-nho-minh"
+  },
+  "tro-ve-nam-1980-cu-dan-mang-day-toi-lam-ten-lua-toi-dan-dau-ky-nguyen-vu-tru": {
+    "title": "Trở Về Năm 1980: Cư Dân Mạng Dạy Tôi Làm Tên Lửa, Tôi Dẫn Đầu Kỷ Nguyên Vũ Trụ",
+    "folder_slug": "tro-ve-nam-1980-cu-dan-mang-day-toi-lam-ten-lua-toi-dan-dau-ky-nguyen-vu-tru"
+  },
+  "tro-choi-kinh-di-toan-cau-nguoi-khac-so-chet-rieng-toi-lai-so-chua-du-dau": {
+    "title": "Trò Chơi Kinh Dị Toàn Cầu: Người Khác Sợ Chết, Riêng Tôi Lại Sợ Chưa Đủ Đau.",
+    "folder_slug": "tro-choi-kinh-di-toan-cau-nguoi-khac-so-chet-rieng-toi-lai-so-chua-du-dau"
+  },
+  "trung-sinh-van-lan-toi-da-lam-qua-moi-nghe-va-nhan-vo-so-giai-nobel": {
+    "title": "Trùng Sinh Vạn Lần, Tôi Đã Làm Qua Mọi Nghề Và Nhận Vô Số Giải Nobel.",
+    "folder_slug": "trung-sinh-van-lan-toi-da-lam-qua-moi-nghe-va-nhan-vo-so-giai-nobel"
+  },
+  "vua-tron-18-tuoi-toi-giai-phong-suc-manh-kiep-truoc-mot-dao-binh-dinh-van-toc": {
+    "title": "Vừa Tròn 18 Tuổi: Tôi Giải Phong Sức Mạnh Kiếp Trước, Một Đao Bình Định Vạn Tộc!",
+    "folder_slug": "vua-tron-18-tuoi-toi-giai-phong-suc-manh-kiep-truoc-mot-dao-binh-dinh-van-toc"
   }
 }
