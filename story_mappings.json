@@ -574,5 +574,13 @@
   "ke-bao-thu-dien-ro-ca-canh-sat-deu-bi-han-dat-mui": {
     "title": "KẺ BÁO THÙ ĐIÊN RỒ, CẢ CẢNH SÁT ĐỀU BỊ HẮN DẮT MŨI",
     "folder_slug": "ke-bao-thu-dien-ro-ca-canh-sat-deu-bi-han-dat-mui"
+  },
+  "mot-luat-su-khong-chi-gioi-to-tung-ma-con-gioi-dua-tham-phan-vao-tu": {
+    "title": "MỘT LUẬT SƯ KHÔNG CHỈ GIỎI TỐ TỤNG MÀ CÒN GIỎI ĐƯA THẨM PHÁN VÀO TÙ",
+    "folder_slug": "mot-luat-su-khong-chi-gioi-to-tung-ma-con-gioi-dua-tham-phan-vao-tu"
+  },
+  "bat-gap-nu-than-lanh-lung-dang-an-vat-trong-sieu-thi": {
+    "title": "BẮT GẶP Nữ Thần Lạnh Lùng ĐANG ĂN VẶT TRONG SIÊU THỊ",
+    "folder_slug": "bat-gap-nu-than-lanh-lung-dang-an-vat-trong-sieu-thi"
   }
 }
