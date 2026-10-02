@@ -214,6 +214,17 @@ class Downloader:
             f"[Downloader] Đã tải hoàn chỉnh file raw ({downloaded / (1024*1024):.2f} MB) "
             f"trong {total_time:.1f}s (Tốc độ TB: {avg_speed:.2f} MB/s)."
         )
+
+        # Kiểm tra tính toàn vẹn của file raw vừa tải
+        actual_raw_size = raw_file.stat().st_size if raw_file.exists() else 0
+        if actual_raw_size == 0:
+            raise RuntimeError("File audio raw tải về rỗng (0 bytes)")
+        if total_size and total_size > 0 and actual_raw_size < total_size * 0.95:
+            raise RuntimeError(
+                f"File raw tải về chưa hoàn tất ({actual_raw_size / (1024*1024):.2f} MB), "
+                f"thấp hơn 95% dung lượng công bố từ máy chủ ({total_size / (1024*1024):.2f} MB)"
+            )
+
         return raw_file, total_size
 
     def _convert_to_m4a(self, raw_audio_path: Path, target_m4a_path: Path) -> Path:
@@ -330,21 +341,8 @@ class Downloader:
         if size == 0:
             return False, "File rỗng (0 bytes)"
 
-        # Nếu biết chính xác kích thước dự kiến từ máy chủ: yêu cầu đạt ít nhất 95%
-        if expected_size and expected_size > 0:
-            if size < expected_size * 0.95:
-                return False, (
-                    f"Dung lượng file chưa hoàn tất ({size_mb:.2f} MB), "
-                    f"thấp hơn 95% dung lượng công bố ({expected_size / (1024*1024):.2f} MB)"
-                )
-        else:
-            if size < MIN_AUDIO_FILE_SIZE_BYTES:
-                return False, (
-                    f"Dung lượng file quá nhỏ ({size_mb:.2f} MB), "
-                    f"không đạt ngưỡng tối thiểu {MIN_AUDIO_FILE_SIZE_MB:.1f} MB (nghi ngờ đứt mạng hoặc tải dở)"
-                )
-
         # Kiểm tra tính toàn vẹn container audio qua ffprobe (nếu có sẵn ffprobe)
+        has_valid_ffprobe = False
         ffprobe_bin = shutil.which("ffprobe")
         if ffprobe_bin:
             try:
@@ -374,8 +372,24 @@ class Downloader:
                         f"[Downloader] ffprobe kiểm tra OK: thời lượng {duration_sec/3600:.2f} giờ "
                         f"({duration_sec/60:.1f} phút)"
                     )
+                    has_valid_ffprobe = True
             except Exception as ex:
                 logging.warning(f"[Downloader] Không thể kiểm tra thời lượng qua ffprobe: {ex}")
+
+        # Kiểm tra dung lượng
+        if expected_size and expected_size > 0:
+            if size < expected_size * 0.95:
+                return False, (
+                    f"Dung lượng file chưa hoàn tất ({size_mb:.2f} MB), "
+                    f"thấp hơn 95% dung lượng công bố ({expected_size / (1024*1024):.2f} MB)"
+                )
+        elif not has_valid_ffprobe:
+            # Khi không có ffprobe để xác thực thời lượng, kiểm tra theo ngưỡng cấu hình MIN_AUDIO_FILE_SIZE_BYTES
+            if size < MIN_AUDIO_FILE_SIZE_BYTES:
+                return False, (
+                    f"Dung lượng file quá nhỏ ({size_mb:.2f} MB), "
+                    f"không đạt ngưỡng tối thiểu {MIN_AUDIO_FILE_SIZE_MB:.1f} MB (nghi ngờ đứt mạng hoặc tải dở)"
+                )
 
         return True, ""
 
@@ -423,6 +437,7 @@ class Downloader:
 
         downloaded_file = None
         expected_size = None
+        raw_path = None
 
         # ─── BƯỚC 1: Tải trực tiếp bằng Native Multi-Range Stream Downloader ───────────
         try:
@@ -461,8 +476,18 @@ class Downloader:
             )
 
         # ─── BƯỚC 3: Kiểm tra tính toàn vẹn và dung lượng tối thiểu ─────────────────
+        # Lưu ý: Nếu file đã qua ffmpeg transcode sang .m4a (AAC 128k), dung lượng file phụ thuộc vào
+        # bitrate 128k và thời lượng audio, không thể so sánh với expected_size của file raw ban đầu.
+        # File raw đã được kiểm tra tính toàn vẹn đạt chuẩn >= 95% trong _download_multirange_stream.
+        is_transcoded = (
+            raw_path is not None
+            and downloaded_file != raw_path
+            and downloaded_file.suffix.lower() == ".m4a"
+        )
+        target_expected_size = None if is_transcoded else expected_size
+
         is_valid, reason = self.validate_downloaded_audio(
-            downloaded_file, expected_size=expected_size
+            downloaded_file, expected_size=target_expected_size
         )
         if not is_valid:
             try:
