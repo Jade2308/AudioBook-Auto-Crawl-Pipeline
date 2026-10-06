@@ -590,5 +590,17 @@
   "be-ha-quoc-cuu-gia-chi-muon-om-dui-nguoi-thoi": {
     "title": "BỆ HẠ! QUỐC CỮU GIA CHỈ MUỐN ÔM ĐÙI NGƯỜI THÔI",
     "folder_slug": "be-ha-quoc-cuu-gia-chi-muon-om-dui-nguoi-thoi"
+  },
+  "dinh-luu-nay-khong-chi-biet-ca-hat-toi-con-la-ty-phu-dung-thu-sau-the-gioi": {
+    "title": "Đỉnh Lưu Này Không Chỉ Biết Ca Hát, Tôi Còn Là Tỷ Phú Đứng Thứ Sáu Thế Giới",
+    "folder_slug": "dinh-luu-nay-khong-chi-biet-ca-hat-toi-con-la-ty-phu-dung-thu-sau-the-gioi"
+  },
+  "luu-manh-huyen-lenh-bay-nam-xay-nen-mot-the-ngoai-dao-nguyen": {
+    "title": "LƯU MANH HUYỆN LỆNH, BẢY NĂM XÂY NÊN MỘT THẾ NGOẠI ĐÀO NGUYÊN",
+    "folder_slug": "luu-manh-huyen-lenh-bay-nam-xay-nen-mot-the-ngoai-dao-nguyen"
+  },
+  "pha-an-phong-phat-truc-tiep-cua-toi-toan-la-vu-an-giet-nguoi": {
+    "title": "PHÁ ÁN, PHÒNG PHÁT TRỰC TIẾP CỦA TÔI TOÀN LÀ VỤ ÁN G.IET NGƯỜI",
+    "folder_slug": "pha-an-phong-phat-truc-tiep-cua-toi-toan-la-vu-an-g-iet-nguoi"
   }
 }
