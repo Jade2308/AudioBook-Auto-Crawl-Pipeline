@@ -602,5 +602,9 @@
   "pha-an-phong-phat-truc-tiep-cua-toi-toan-la-vu-an-giet-nguoi": {
     "title": "PHÁ ÁN, PHÒNG PHÁT TRỰC TIẾP CỦA TÔI TOÀN LÀ VỤ ÁN G.IET NGƯỜI",
     "folder_slug": "pha-an-phong-phat-truc-tiep-cua-toi-toan-la-vu-an-g-iet-nguoi"
+  },
+  "gen-z-lam-truyen-thong-nha-nuoc-sep-ngay-nao-cung-phat-dien": {
+    "title": "GEN Z LÀM TRUYỀN THÔNG NHÀ NƯỚC, SẾP NGÀY NÀO CŨNG PHÁT ĐIÊN",
+    "folder_slug": "gen-z-lam-truyen-thong-nha-nuoc-sep-ngay-nao-cung-phat-dien"
   }
 }
