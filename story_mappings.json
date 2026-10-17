@@ -654,5 +654,9 @@
   "xuyen-thanh-dai-ca-phan-dien-ta-chuyen-ho-de-de-thien-menh": {
     "title": "XUYÊN THÀNH ĐẠI CA PHẢN DIỆN, TA CHUYÊN HỐ ĐỆ ĐỆ THIÊN MỆNH",
     "folder_slug": "xuyen-thanh-dai-ca-phan-dien-ta-chuyen-ho-de-de-thien-menh"
+  },
+  "nguoi-khac-tham-gia-show-hen-ho-de-yeu-con-toi-den-de-lam-loan": {
+    "title": "NGƯỜI KHÁC THAM GIA SHOW HẸN HÒ ĐỂ YÊU, CÒN TÔI ĐẾN ĐỂ LÀM LOẠN",
+    "folder_slug": "nguoi-khac-tham-gia-show-hen-ho-de-yeu-con-toi-den-de-lam-loan"
   }
 }
