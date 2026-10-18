@@ -658,5 +658,9 @@
   "nguoi-khac-tham-gia-show-hen-ho-de-yeu-con-toi-den-de-lam-loan": {
     "title": "NGƯỜI KHÁC THAM GIA SHOW HẸN HÒ ĐỂ YÊU, CÒN TÔI ĐẾN ĐỂ LÀM LOẠN",
     "folder_slug": "nguoi-khac-tham-gia-show-hen-ho-de-yeu-con-toi-den-de-lam-loan"
+  },
+  "toi-chi-muon-nam-ngua-ai-ngo-thanh-dinh-luu-toan-cau": {
+    "title": "TÔI CHỈ MUỐN NẰM NGỮA AI NGỜ THÀNH ĐỈNH LƯU TOÀN CẦU",
+    "folder_slug": "toi-chi-muon-nam-ngua-ai-ngo-thanh-dinh-luu-toan-cau"
   }
 }
