@@ -722,5 +722,13 @@
   "trong-sinh-vao-gioi-giai-tri-toi-dung-he-thong-can-quet-toan-nganh": {
     "title": "TRỌNG SINH VÀO GIỚI GIẢI TRÍ, TÔI DÙNG HỆ THỐNG CÀN QUET TOÀN NGÀNH",
     "folder_slug": "trong-sinh-vao-gioi-giai-tri-toi-dung-he-thong-can-quet-toan-nganh"
+  },
+  "muoi-hai-canh-sat-bi-lang-quen-mot-tran-danh-chan-dong-ca-nuoc": {
+    "title": "MƯỜI HAI CẢNH SÁT BỊ LÃNG QUÊN, MỘT TRẬN ĐÁNH CHẤN ĐỘNG CẢ NƯỚC",
+    "folder_slug": "muoi-hai-canh-sat-bi-lang-quen-mot-tran-danh-chan-dong-ca-nuoc"
+  },
+  "nguoi-khac-tu-luc-canh-sinh-con-toi-chuyen-tam-an-com-mem": {
+    "title": "NGƯỜI KHÁC TỰ LỰC CÁNH SINH, CÒN TÔI CHUYÊN TÂM ĂN CƠM MỀM",
+    "folder_slug": "nguoi-khac-tu-luc-canh-sinh-con-toi-chuyen-tam-an-com-mem"
   }
 }
