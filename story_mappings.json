@@ -730,5 +730,9 @@
   "nguoi-khac-tu-luc-canh-sinh-con-toi-chuyen-tam-an-com-mem": {
     "title": "NGƯỜI KHÁC TỰ LỰC CÁNH SINH, CÒN TÔI CHUYÊN TÂM ĂN CƠM MỀM",
     "folder_slug": "nguoi-khac-tu-luc-canh-sinh-con-toi-chuyen-tam-an-com-mem"
+  },
+  "he-thong-diem-danh-qua-ba-dao-toi-hoc-gi-cung-thanh-cao-thu": {
+    "title": "HỆ THỐNG ĐIỂM DANH QUÁ BÁ ĐẠO. TÔI HỌC GÌ CŨNG THÀNH CAO THỦ",
+    "folder_slug": "he-thong-diem-danh-qua-ba-dao-toi-hoc-gi-cung-thanh-cao-thu"
   }
 }
