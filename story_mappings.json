@@ -766,5 +766,17 @@
   "toi-lam-game-du-lich-nghi-duong-ai-ngo-game-thu-khoc-nhu-mua": {
     "title": "TÔI LÀM GAME DU LỊCH NGHỈ DƯỠNG, AI NGỜ GAME THỦ KHÓC NHƯ MƯA",
     "folder_slug": "toi-lam-game-du-lich-nghi-duong-ai-ngo-game-thu-khoc-nhu-mua"
+  },
+  "toi-chi-la-tac-gia-tieu-thuyet-mang-sao-cac-dai-van-hao-cu-doi-bai-toi-lam-thay": {
+    "title": "Tôi Chỉ Là Tác Giả Tiểu Thuyết Mạng, Sao Các Đại Văn Hào Cứ Đòi Bái Tôi Làm Thầy?",
+    "folder_slug": "toi-chi-la-tac-gia-tieu-thuyet-mang-sao-cac-dai-van-hao-cu-doi-bai-toi-lam-thay"
+  },
+  "vua-tiep-quan-cong-ty-pha-san-toi-da-khien-cac-ong-lon-cong-nghe-mat-ngu": {
+    "title": "Vừa Tiếp Quản Công Ty Phá Sản, Tôi Đã Khiến Các Ông Lớn Công Nghệ Mất Ngủ!",
+    "folder_slug": "vua-tiep-quan-cong-ty-pha-san-toi-da-khien-cac-ong-lon-cong-nghe-mat-ngu"
+  },
+  "bo-pho-ve-que-nau-ruou-ai-ngo-xay-dung-ca-tap-doan-ngan-ty": {
+    "title": "BỎ PHỐ VỀ QUÊ NẤU RƯỢU, AI NGỜ XÂY DỰNG CẢ TẬP ĐOÀN NGÀN TỶ",
+    "folder_slug": "bo-pho-ve-que-nau-ruou-ai-ngo-xay-dung-ca-tap-doan-ngan-ty"
   }
 }
