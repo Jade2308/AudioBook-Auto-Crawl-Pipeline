@@ -798,5 +798,9 @@
   "tung-la-linh-danh-thue-so-mot-gio-toi-chi-muon-cham-vo-nuoi-con": {
     "title": "TỪNG LÀ LÍNH ĐÁNH THUÊ SỐ MỘT, GIỜ TÔI CHỈ MUỐN CHĂM VỢ NUÔI CON",
     "folder_slug": "tung-la-linh-danh-thue-so-mot-gio-toi-chi-muon-cham-vo-nuoi-con"
+  },
+  "game-cua-toi-khong-ton-mot-xu-nhung-game-thu-nap-den-pha-san": {
+    "title": "GAME CỦA TÔI KHÔNG TỐN MỘT XU, NHƯNG GAME  THỦ NẠP ĐẾN PHÁ SẢN",
+    "folder_slug": "game-cua-toi-khong-ton-mot-xu-nhung-game-thu-nap-den-pha-san"
   }
 }
