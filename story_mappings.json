@@ -854,5 +854,9 @@
   "lam-truyen-thong-du-lich-huyen-toi-khien-ca-mang-cuoi-khong-ngung": {
     "title": "LÀM TRUYỀN THÔNG DU LỊCH HUYỆN, TÔI KHIẾN CẢ MẠNG CƯỜI KHÔNG NGỪNG",
     "folder_slug": "lam-truyen-thong-du-lich-huyen-toi-khien-ca-mang-cuoi-khong-ngung"
+  },
+  "bi-ep-tham-gia-show-dao-hoang-toi-khien-dan-minh-tinh-phai-nga-mu": {
+    "title": "BỊ ÉP THAM GIA SHOW ĐẢO HOANG, TÔI KHIẾN DÀN MINH TINH PHẢI NGẢ MŨ",
+    "folder_slug": "bi-ep-tham-gia-show-dao-hoang-toi-khien-dan-minh-tinh-phai-nga-mu"
   }
 }
